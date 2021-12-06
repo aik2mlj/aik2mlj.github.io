@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Aik Min /home/aik2"
+title                    : "/home/aik2"
 title_separator          : "-"
 name                     : &name "Aik Min"
 description              : &description "No description"
