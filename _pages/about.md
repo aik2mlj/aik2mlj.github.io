@@ -8,35 +8,19 @@ redirect_from:
   - /about.html
 ---
 
-Hi&#128075;, I am a junior undergraduate student majoring in **C**omputer **S**cience at _Shanghai Jiao Tong University_. 
-I am in the _Zhiyuan Honor Program_ of CS, also known as **ACM Class**, which targets at cultivating top computer scientists.
+Hi&#128075;, I am a junior undergraduate student majoring in **C**omputer **S**cience at [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). 
+I am in the [Zhiyuan Honors Program](https://en.zhiyuan.sjtu.edu.cn/) of CS, also known as [**ACM Class**](https://acm.sjtu.edu.cn/home), which targets at cultivating top computer scientists.
 
 What differs me from my peer classmates is that I've grown an ineffaceable interest in Art, mainly in **music**&#9834; and **literature**&#128214;. 
-And I'd like to treat it more seriously and let it grow a bit bigger than hobbies. I have found myself saturated with the desire 
-of expressing my views and thoughts. But of course, the road ahead is long.
-
-## Abilities
-
-**CS relevant**:
-- C++, Python, Java, Rust
-- Familiar with Machine Learning strategies
-- Basic understanding about compiler, architecture and system
-- Sophisticated skills on managing projects & debugging
-- Linux & Open source enthusiastic
-- Experiences on Unity game development and audio plugin development using [JUCE](https://juce.com/) framework (amateur)
-
-**Music**:
-- Primary knowledge on producing & mixing
-- [Reaper](https://www.reaper.fm/) maniac
-- _Guzheng_ & Piano grade 10 (highest amateur level in China) qualified
-
-**Art related**:
-- Sketching & Pastel Painting
-- A small glimpse into 3D Modeling
-
-**Literary taste**:
-- Sadly this cannot be showcased but reading has always been an essential part of my life so please believe me&#128521;
+I'd like to treat it more seriously and let it grow a bit bigger than hobbies. I have found myself saturated with the desire 
+of expressing my views and thoughts to the world. But of course, the road ahead is long.
 
 ## Current Work
 
-- Doing researches on **T**heoretical **C**omputer **S**cience recently with [Chihao Zhang](http://chihaozhang.com)
+- I am doing researches on **T**heoretical **C**omputer **S**cience recently with [Chihao Zhang](http://chihaozhang.com).
+- My first electronic music piece is going to be released under [CEM Record](https://soundcloud.com/cemrecords) soon.
+
+## What I Have Done
+
+- You can view my experience and skills [here](/cv/).
+- You can check my portfolio [here](/portfolio/).

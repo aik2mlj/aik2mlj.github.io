@@ -11,30 +11,36 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+- B.S. in Computer Science, Zhiyuan College, Shanghai Jiao Tong University, September 2019 - Present
 
-Work experience
+Experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+- Undergraduate Teaching Assistant (Summer 2021)
+	- Zhiyuan College, Shanghai Jiao Tong University
+	- **Duties included:**: Designing tutorials for writing a ray tracer in Rust; Handing out assignments and giving feedback; Designing problems for tests.
+	- **Supervisor**: [Yong Yu](https://apex.sjtu.edu.cn/members/yyu) 
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+**CS relevant**:
+- C++, Python, Java, Rust, Git
+- Familiar with machine learning strategies
+- Basic understanding about compiler, architecture and system
+- Sophisticated skills on managing projects & debugging
+- Linux & Open source software enthusiastic
+- Experiences on Unity game development and audio plugin development using [JUCE](https://juce.com/) framework (amateur)
+
+**Music**:
+- Primary knowledge on producing & mixing
+- [Reaper](https://www.reaper.fm/) maniac
+- [_Guzheng_](https://en.wikipedia.org/wiki/Guzheng) & Piano grade 10 (highest amateur level in China) qualified
+
+**Design & Painting**:
+- Sketching & Pastel Painting
+- Having had a small glimpse into 3D Modeling using [blender](https://www.blender.org/)
+
+**Literary taste**:
+- Sadly this cannot be showcased but reading has always been an essential part of my life so please believe me&#128521;.
 
 Publications
 ======
@@ -48,12 +54,7 @@ Talks
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
   
-Teaching
+Extracurricular Experience
 ======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+- Member of _Piano Association_ in SJTU
+- Member of _Edge Philosophy Club_ in SJTU
