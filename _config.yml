@@ -187,6 +187,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  literature:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -244,6 +247,14 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _literature
+  - scope:
+      path: ""
+      type: literature
+    values:
+      layout: single
+      author_profile: true
+      share: false
 
 # Sass/SCSS
 sass:
