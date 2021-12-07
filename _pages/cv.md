@@ -42,6 +42,14 @@ Skills
 **Literary taste**:
 - Sadly this cannot be showcased but reading has always been an essential part of my life so please believe me&#128521;.
 
+Language Proficiency
+======
+- TOEFL: 112 (2021-10-16)
+
+Academic Record
+======
+- GPA: 3.78 / 4.3
+
 Publications
 ======
   <ul>{% for post in site.publications %}
