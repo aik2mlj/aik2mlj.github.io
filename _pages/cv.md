@@ -23,7 +23,7 @@ Experience
 Skills
 ======
 **CS relevant**:
-- C++, Python, Java, Rust, Git
+- C++, Python, Java, Rust, Verilog, Git
 - Familiar with machine learning strategies
 - Basic understanding about compiler, architecture and system
 - Sophisticated skills on managing projects & debugging

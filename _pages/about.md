@@ -8,10 +8,10 @@ redirect_from:
   - /about.html
 ---
 
-Hi&#128075;, I am a junior undergraduate student majoring in **C**omputer **S**cience at [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). 
+Hi👋;, I am a junior undergraduate student majoring in **C**omputer **S**cience at [Shanghai Jiao Tong University](https://www.sjtu.edu.cn/). 
 I am in the [Zhiyuan Honors Program](https://en.zhiyuan.sjtu.edu.cn/) of CS, also known as [**ACM Class**](https://acm.sjtu.edu.cn/home), which targets at cultivating top computer scientists.
 
-What differs me from my peer classmates is that I've grown an ineffaceable interest in Art, mainly in **music**&#9834; and **literature**&#128214;. 
+What differs me from my peer classmates is that I've grown an ineffaceable interest in Art, mainly in **music**♪ and **literature**📖. 
 I'd like to treat it more seriously and let it grow a bit bigger than hobbies. I have found myself saturated with the desire 
 of expressing my views and thoughts to the world. But of course, the road ahead is long.
 
