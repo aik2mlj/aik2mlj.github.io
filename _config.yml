@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "/home/aik2"
 title_separator          : "-"
-name                     : &name "Aik Min"
+name                     : &name "Lejun Min"
 description              : &description "No description"
 url                      : https://aik2.me # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Aik Min"
+  name             : "Lejun Min"
   avatar           : "profile.jpg"
   bio              : "" # TODO
   location         : "Shanghai, China"
