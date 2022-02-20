@@ -48,7 +48,7 @@ Language Proficiency
 
 Academic Record
 ======
-- GPA: 3.78 / 4.3
+- GPA: 3.79 / 4.3
 
 Publications
 ======
@@ -64,5 +64,6 @@ Talks
   
 Extracurricular Experience
 ======
+- Member of _Skateboarding Club_ in SJTU
 - Member of _Piano Association_ in SJTU
 - Member of _Edge Philosophy Club_ in SJTU

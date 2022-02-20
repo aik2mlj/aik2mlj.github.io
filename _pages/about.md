@@ -17,7 +17,8 @@ of expressing my views and thoughts to the world. But of course, the road ahead 
 
 ## Current Work
 
-- I am doing researches on **T**heoretical **C**omputer **S**cience recently with [Chihao Zhang](http://chihaozhang.com).
+- I'm working on a deep music generation project with [Gus Xia](https://www.cs.cmu.edu/~gxia/) at [Music X Lab](http://www.musicxlab.com), NYU Shanghai.
+- I did researches on **T**heoretical **C**omputer **S**cience formerly with [Chihao Zhang](http://chihaozhang.com), SJTU.
 - My first electronic music piece has been released under CEM Record. Check it on [NeteaseMusic](https://music.163.com/song?id=1904086661) or [Soundcloud](https://soundcloud.com/cemrecords/aik2)!
 
 ## What I Have Done
