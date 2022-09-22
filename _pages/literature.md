@@ -5,7 +5,7 @@ permalink: /literature/
 author_profile: true
 ---
 
-I write things in Chinese. Alphabetic languages are boring.
+I write things in Chinese.
 
 {% include base_path %}
 
