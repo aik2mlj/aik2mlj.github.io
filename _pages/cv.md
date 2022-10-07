@@ -25,14 +25,20 @@ Academic Record
 
 Experience
 ======
-- Research Assistant in Machine Learning Department (June 2022 -- October 2022)
+- Research Assistant in Machine Learning Department (Jun. 2022 -- Dec. 2022)
     - [Mohamed Bin Zayed University of Artificial Intelligence](https://mbzuai.ac.ae/), Abu Dhabi, UAE
-    - **Duties included**: Conducting researches on deep music generation and machine learning.
+    - **Duties included**: Conducted researches on deep music generation and machine learning. Focused on diffusion models, VAEs and relevant applications in computer music domain.
     - **Supervisor**: [Gus Xia](https://www.cs.cmu.edu/~gxia/)
-- Undergraduate Teaching Assistant (Summer 2021)
-	- Zhiyuan College, Shanghai Jiao Tong University, China
-	- **Duties included:**: Designing tutorials for writing a ray tracer in Rust; Handing out assignments and giving feedback; Designing problems for tests.
-	- **Supervisor**: [Yong Yu](https://apex.sjtu.edu.cn/members/yyu) 
+
+- Researcher on Computer Music (Jan. 2022 - Present)
+    - [Music X Lab](http://www.musicxlab.com), New York University Shanghai
+    - **Duties included**: Conducting researches on deep music generation and machine learning. Focused on model designing of automatic piano reduction and orchestration.
+    - **Supervisor**: [Gus Xia](https://www.cs.cmu.edu/~gxia/)
+
+- Research Assistant on Theoretical Computer Science (Summer 2021 -- Winter 2021)
+    - [John Hopcroft Center for Computer Science, SJTU](https://jhc.sjtu.edu.cn/)
+    - **Duties included**: Assisted with theoretical computer science research focusing on counting problems.
+    - **Supervisor**: [Chihao Zhang](http://chihaozhang.com)
   
 Skills
 ======
@@ -56,6 +62,12 @@ Skills
 **Literary taste**:
 - Sadly this cannot be showcased but reading has always been an essential part of my life so please believe me😉.
 
+Teaching
+======
+  <ul>{% for post in site.teaching %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+  
 Publications
 ======
   <ul>{% for post in site.publications %}
