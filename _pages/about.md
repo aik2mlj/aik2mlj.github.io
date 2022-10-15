@@ -16,10 +16,10 @@ As a versatile player, I have probed into many areas apart from my major. I can 
 
 ## Current Work
 
-- I'm working on a deep music generation project with [Gus Xia](https://www.cs.cmu.edu/~gxia/) at [Music X Lab](http://www.musicxlab.com), NYU Shanghai.
+- I'm working on a deep music generation project with [Prof. Gus Xia](https://www.cs.cmu.edu/~gxia/) at [Music X Lab](http://www.musicxlab.com), NYU Shanghai.
     - Our goal is to first accomplish a model for piano reduction from orchestra sheets, and then reverse the process -- generate orchestration from piano pieces. Both works utilize the power of deep learning (diffusion models, VAEs).
     - For that, I'm right now hired as a research assistant in [MBZUAI](https://mbzuai.ac.ae/), Abu Dhabi, UAE.
-- I did researches on **T**heoretical **C**omputer **S**cience formerly with [Chihao Zhang](http://chihaozhang.com), SJTU.
+- I did researches on **T**heoretical **C**omputer **S**cience formerly with [Prof. Chihao Zhang](http://chihaozhang.com), SJTU.
 - My first electronic music piece has been released under *CEM Record*, one of the biggest electronic music labels in China. Check it [here](/portfolio/sunset_sea/)!
 
 ## What I Have Done
