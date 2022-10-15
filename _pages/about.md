@@ -8,11 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-Hi👋, I am a senior undergraduate student majoring in **C**omputer **S**cience at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/), a top-4 university in China. I am in the [Zhiyuan Honors Program](https://en.zhiyuan.sjtu.edu.cn/) of CS, also known as [**ACM Class**](https://acm.sjtu.edu.cn/home), which targets at cultivating top computer scientists and researchers. Our program is famous for its remarkable alumna pushing forward the edges of various Computer Science domains, both in industry and academia.
+Hi👋, I am a senior undergraduate student majoring in **C**omputer **S**cience at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/), a top-4 university in China. I am in the [Zhiyuan Honors Program](https://en.zhiyuan.sjtu.edu.cn/) of CS, also known as [**ACM Class**](https://acm.sjtu.edu.cn/home), which aims to cultivate top computer scientists and researchers. Our program is famous for its remarkable alumna pushing forward the edges of various Computer Science domains, both in industry and academia.
 
-Being competent among all the courses (ranking: 6/30), what differs me most from my peer classmates is that I've grown a keen interest in **ART**. I'd like to treat it more seriously and let it grow a bit bigger than hobbies. With a strong background in programming and mathematics, I believe I have the potential of instilling love and inspirations into relevant researches.
+Being competent among all the courses (ranking: 6/30), what differs me most from my peer classmates is that I've grown a keen passion for **ART**. I'd like to treat it more seriously and let it grow a bit bigger than hobbies. With a strong background in programming and mathematics, I believe I have the potential of instilling love and inspirations into relevant researches and creation.
 
-As a versatile player, I have probed into many areas apart from my major. I can play multiple instruments, sing pitch-perfectly, produce and mix my own music, compose puerile poems in Chinese calligraphy, [ollie](https://en.wikipedia.org/wiki/Ollie_(skateboarding)) over 2 skateboards, hold spiritual conversations on philosophy/religion, and make a good friend within 5min.
+As a versatile player, I have probed into many areas apart from my major. I can play multiple instruments, sing pitch-perfectly, produce and mix my own music, paint and design visual art, compose puerile poems written in Chinese calligraphy, [ollie](https://en.wikipedia.org/wiki/Ollie_(skateboarding)) over 2 skateboards, hold spiritual conversations on philosophy / religion, and make a good friend within 5 minutes.
 
 ## Current Work
 
