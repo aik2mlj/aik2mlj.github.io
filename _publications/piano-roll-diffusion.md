@@ -1,7 +1,6 @@
 ---
 title: "Controllable Music Score Generation and Piano Reduction with Piano‑roll Diffusion"
 collection: publications
-permalink: /publication/piano-roll-diffusion
 excerpt: 'Lejun Min, Gus Xia<br />Our work utilizes conditional diffusion models on image‑like piano‑roll generation. By
 exploring means of conditional methods and guidances for diffusion models on music arrangement tasks, we combine
 inductive biases of intrinsic musical structure into diffusion‑based models.'
@@ -18,7 +17,7 @@ inductive biases of intrinsic musical structure into diffusion‑based models.'
   }
 
   #section3 midi-player::part(control-panel) {
-    background: #ff5;
+    background: #252a34;
     border: 2px solid #000;
     border-radius: 10px 10px 0 0;
   }
@@ -44,7 +43,7 @@ inductive biases of intrinsic musical structure into diffusion‑based models.'
 
   /* Custom visualizer style */
   #section3 midi-visualizer .piano-roll-visualizer {
-    background: #ffd;
+    background: #252a34;
     border: 2px solid black;
     border-top: none;
     border-radius: 0 0 10px 10px;
@@ -78,6 +77,8 @@ inductive biases of intrinsic musical structure into diffusion‑based models.'
     stroke: #000;
   }
 </style>
+
+Our work utilizes conditional diffusion models on image‑like piano‑roll generation. By exploring means of conditional methods and guidances for diffusion models on music arrangement tasks, we combine inductive biases of intrinsic musical structure into diffusion‑based models.
 
 This is a work-in-progress project. Yet we have already achieved generations of excellent-quality music segments.
 
