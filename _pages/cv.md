@@ -33,7 +33,7 @@ Experience
 
 - Researcher on Computer Music (Jan. 2022 - Present)
     - [Music X Lab](http://www.musicxlab.com), New York University Shanghai
-    - **Duties included**: Conducting researches on deep music generation and machine learning. Focused on model designing of automatic piano reduction and orchestration.
+    - **Duties included**: Conducting research on deep music generation and machine learning. Focused on model designing of automatic piano reduction and orchestration.
     - **Supervisor**: [Prof. Gus Xia](https://www.cs.cmu.edu/~gxia/)
 
 - Research Assistant on Theoretical Computer Science (Summer 2021 -- Winter 2021)
