@@ -1,5 +1,5 @@
 ---
-title: "Controllable Music Score Generation and Piano Reduction with Piano‑roll Diffusion"
+title: "Controllable Symbolic Music Generation and Piano Reduction with Piano‑roll Diffusion"
 collection: publications
 excerpt: 'Lejun Min, Gus Xia<br />Our work utilizes diffusion models on image‑like piano‑roll generation. By
 exploring means of conditional methods and guidances for diffusion models on music arrangement tasks, we combine
@@ -77,6 +77,8 @@ inductive biases of intrinsic musical structure into diffusion‑based models.'
     stroke: #000;
   }
 </style>
+
+Lejun Min, Gus Xia
 
 Our work utilizes diffusion models on image‑like piano‑roll generation. By exploring means of conditional methods and guidances for diffusion models on music arrangement tasks, we combine inductive biases of intrinsic musical structure into diffusion‑based models.
 
