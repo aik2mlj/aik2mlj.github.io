@@ -3,7 +3,7 @@ title: "Ray Tracer"
 excerpt: "Ray tracing engine written in Rust that can output something colorful.<br/><img src='/images/raytracer(3).png' width='60%'>"
 date: 2020-08-01
 type: "CG Project"
-collection: portfolio
+collection: projects
 ---
 
 This is a project assigned in Principle and Practice of Computer Algorithms (CS1952) courses.
