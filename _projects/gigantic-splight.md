@@ -1,6 +1,6 @@
 ---
 title: "Gigantic Splight"
-excerpt: "A 3D fluids simulation project based on Taichi framework. Several fun ways of interactions are combined.<br/><img src='/images/fluid_simulation.png' width='60%'>"
+excerpt: "A 3D fluids simulation project based on Taichi framework. Several fun ways of interactions are combined.<br/><br/><img src='/images/fluid_simulation.png' width='60%'>"
 date: 2022-06-01
 type: "CG Project"
 collection: projects

@@ -1,6 +1,6 @@
 ---
 title: "RISC-V CPU"
-excerpt: "Course MS108, an emulated RISCV32I CPU written in verilog.<br/><img src='https://user-images.githubusercontent.com/53085155/191782299-1bdb1309-1f78-4d2c-a303-60b4611c00ad.png' width='60%'>"
+excerpt: "Course MS108, an emulated RISCV32I CPU written in verilog.<br/><br/><img src='https://user-images.githubusercontent.com/53085155/191782299-1bdb1309-1f78-4d2c-a303-60b4611c00ad.png' width='60%'>"
 date: 2020-12-01
 type: "Programming Project"
 collection: projects

@@ -1,6 +1,6 @@
 ---
 title: "Simple EQ"
-excerpt: "A step-by-step learning project that utilized JUCE framework for audio plugin development.<br/><img src='https://i.imgur.com/gmCqfgf.png' width='60%'>"
+excerpt: "A step-by-step learning project that utilized JUCE framework for audio plugin development.<br/><br/><img src='https://i.imgur.com/gmCqfgf.png' width='60%'>"
 date: 2022-01-08
 type: "Audio Programming Project"
 collection: projects

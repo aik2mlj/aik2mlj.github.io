@@ -1,6 +1,6 @@
 ---
 title: "Ray Tracer"
-excerpt: "Ray tracing engine written in Rust that can output something colorful.<br/><img src='/images/raytracer(3).png' width='60%'>"
+excerpt: "Ray tracing engine written in Rust that can output something colorful.<br/><br/><img src='/images/raytracer(3).png' width='60%'>"
 date: 2020-08-01
 type: "CG Project"
 collection: projects

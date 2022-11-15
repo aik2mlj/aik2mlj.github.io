@@ -1,6 +1,6 @@
 ---
 title: "Scotty3D"
-excerpt: "A comprehensive CG project following CMU462 course.<br/><img src='/images/scotty3d_3.png' width='60%'>"
+excerpt: "A comprehensive CG project following CMU462 course.<br/><br/><img src='/images/scotty3d_3.png' width='60%'>"
 date: 2022-03-02
 type: "CG Project"
 collection: projects

@@ -1,6 +1,6 @@
 ---
 title: "Pastels"
-excerpt: "Pastel works mimicking dull photos.<br/><img src='/images/pastel_3.jpg' width='60%'>"
+excerpt: "Pastel works mimicking dull photos.<br/><br/><img src='/images/pastel_3.jpg' width='60%'>"
 date: 2019-07-20
 type: "Painting"
 collection: portfolio

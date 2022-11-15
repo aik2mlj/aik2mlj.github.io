@@ -1,6 +1,6 @@
 ---
 title: "Sunset Sea Cover"
-excerpt: "New single album cover.<br/><img src='/images/sunset_sea2_painted_2.png' width='60%'>"
+excerpt: "New single album cover.<br/><br/><img src='/images/sunset_sea2_painted_2.png' width='60%'>"
 date: 2021-12-09
 type: "3D & Digital Painting Art"
 collection: portfolio

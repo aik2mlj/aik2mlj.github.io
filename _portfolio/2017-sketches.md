@@ -1,6 +1,6 @@
 ---
 title: "Sketches inherited from high school"
-excerpt: "Innocent adolescence.<br/><img src='/images/sketch2.jpg' width='60%'>"
+excerpt: "Innocent adolescence.<br/><br/><img src='/images/sketch2.jpg' width='60%'>"
 date: 2017-12-01
 type: "Painting"
 collection: portfolio

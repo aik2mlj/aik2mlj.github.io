@@ -1,6 +1,6 @@
 ---
 title: "Parallelism"
-excerpt: "Techno track with some impromptu"
+excerpt: "Techno track with some impromptu.<br/><br/><img src='/images/parallelism.jpg' width='40%'>"
 date: 2022-06-20
 type: "Music"
 collection: portfolio

@@ -1,6 +1,6 @@
 ---
 title: "Sordid Affair (Remix)"
-excerpt: "My first complete electronic music piece."
+excerpt: "My first complete electronic music piece.<br/><br/><img src='/images/sordid_affair.jpg' width='40%'>"
 date: 2021-03-26
 type: "Music"
 collection: portfolio
