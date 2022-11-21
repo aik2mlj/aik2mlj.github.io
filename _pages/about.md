@@ -8,21 +8,22 @@ redirect_from:
   - /about.html
 ---
 
-Hi👋, I am a senior undergraduate student majoring in **C**omputer **S**cience at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/), a top-4 university in China. I am in the [Zhiyuan Honors Program](https://en.zhiyuan.sjtu.edu.cn/) of CS, also known as [**ACM Class**](https://acm.sjtu.edu.cn/home), which aims to cultivate top computer scientists and researchers. Our program is famous for its remarkable alumna pushing forward the edges of various Computer Science domains, both in industry and academia.
+Hi👋, I am a senior undergraduate researcher interested in **Computer Music**. Majoring in **C**omputer **S**cience at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/), I am a member of [**ACM Honor Class**](https://acm.sjtu.edu.cn/home), an elite CS program with extensive academic reputation.
 
-Being competent among all the courses (top 10 student), what differs me most from my peer classmates is that I've grown a keen passion for **ART**. I'd like to treat it more seriously and let it grow a bit bigger than hobbies. With a strong background in programming and mathematics, I believe I have the potential of instilling love and inspirations into relevant research and creation.
+My dream is to bring people closer to artistic creativity, with interdisciplinary research on music, media, and computer science. I am passionate about music representation learning, controllable music generation, machine improvisation, and human-computer interaction. My research interest can be aligned into two directions: 1. instilling creativity into machine learning models; 2. provoking human creativity via interactive intelligent systems.
 
-As a versatile player, I have probed into many areas apart from my major. I can play multiple instruments, sing pitch-perfectly, produce and mix my own music, paint and design visual art, compose puerile poems written in Chinese calligraphy, [ollie](https://en.wikipedia.org/wiki/Ollie_(skateboarding)) over 2 skateboards, hold spiritual conversations on philosophy / religion, and make a good friend within 5 minutes.
+As a versatile player, I can play multiple instruments, sing pitch-perfectly, produce and mix my own music, paint and design visual art, compose puerile poems written in Chinese calligraphy, [ollie](https://en.wikipedia.org/wiki/Ollie_(skateboarding)) over 2 skateboards, hold spiritual conversations on philosophy / religion, and make a good friend within 5 minutes.
 
-## Current Work
+## Selected Work
 
 - I'm working on a deep music generation project with [Prof. Gus Xia](https://www.cs.cmu.edu/~gxia/) at [Music X Lab](http://www.musicxlab.com), NYU Shanghai.
-    - Our goal is to first accomplish a model for piano reduction from orchestra sheets, and then reverse the process -- generate orchestration from piano pieces. Both works utilize the power of deep learning (diffusion models, VAEs). As a more general application, we also design means of symbolic music generation. Check some demos [here](/publications/piano-roll-diffusion).
+    - We approach piano reduction and orchestration in the view of generative modeling with *Diffusion Models*. We devised an image-like piano-roll format for its training, and adopted cross-attention mechanics for symbolic music generation conditioned on chords and textures. Our model can generate and inpaint vivid and consistent music segments of arbitrary length. Some demos are provided [here](/publications/piano-roll-diffusion).
     - For that, I'm right now hired as a research assistant in [MBZUAI](https://mbzuai.ac.ae/), Abu Dhabi, UAE.
 - I did research on **T**heoretical **C**omputer **S**cience formerly with [Prof. Chihao Zhang](http://chihaozhang.com), SJTU.
-- My first electronic music piece has been released under *CEM Record*, one of the biggest electronic music labels in China. Check it [here](/portfolio/sunset_sea/)!
+- My first electronic music piece has been released under *CEM Records*, one of the most prestigious electronic music labels in China. Check it [here](/portfolio/sunset_sea/)!
 
-## What I Have Done
+## For More Information
 
 - You can view my experience and skills [here](/cv/).
 - You can check my portfolio [here](/portfolio/).
+- You can check my programming projects [here](/projects/).
