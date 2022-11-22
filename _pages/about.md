@@ -12,7 +12,7 @@ Hi👋, I am a senior undergraduate researcher interested in **Computer Music**.
 
 My dream is to bring people closer to artistic creativity, with interdisciplinary research on music, media, and computer science. I am passionate about music representation learning, controllable music generation, machine improvisation, and human-computer interaction. My research interest can be aligned into two directions: 1. instilling creativity into machine learning models; 2. provoking human creativity via interactive intelligent systems.
 
-As a versatile player, I can play multiple instruments, sing pitch-perfectly, produce and mix my own music, paint and design visual art, compose puerile poems written in Chinese calligraphy, [ollie](https://en.wikipedia.org/wiki/Ollie_(skateboarding)) over 2 skateboards, hold spiritual conversations on philosophy / religion, and make a good friend within 5 minutes.
+As a versatile player, I can play [guzheng](https://en.wikipedia.org/wiki/Guzheng) and piano, produce and mix electronic music, paint and design visual art, compose puerile poems written in Chinese calligraphy, [ollie](https://en.wikipedia.org/wiki/Ollie_(skateboarding)) over 2 skateboards, hold spiritual conversations on literature / philosophy, and make a good friend within 5 minutes.
 
 ## Selected Work
 
