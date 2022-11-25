@@ -1,6 +1,6 @@
 ---
 title: "Mime: Return Myself"
-excerpt: "An mime performance about how a CS student lost himself and recovered again.<br/><br/><img src='https://i.imgur.com/mlUCThQ.png' width='60%'>"
+excerpt: "A mime about how a CS student lost himself and recovered again.<br/><br/><img src='https://i.imgur.com/mlUCThQ.png' width='60%'>"
 date: 2019-10-20
 type: "Mime, Performance"
 collection: portfolio
