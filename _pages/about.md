@@ -20,7 +20,7 @@ As a versatile player, I can play [guzheng](https://en.wikipedia.org/wiki/Guzhen
     - We approach piano reduction and orchestration in the view of generative modeling with *Diffusion Models*. We devised an image-like piano-roll format for its training, and adopted cross-attention mechanics for symbolic music generation conditioned on chords and textures. Our model can generate and inpaint vivid and consistent music segments of arbitrary length. Some demos are provided [here](/publications/piano-roll-diffusion).
     - For that, I'm right now hired as a research assistant in [MBZUAI](https://mbzuai.ac.ae/), Abu Dhabi, UAE.
 - I did research on **T**heoretical **C**omputer **S**cience formerly with [Prof. Chihao Zhang](http://chihaozhang.com), SJTU.
-- My first electronic music piece has been released under *CEM Records*, one of the most prestigious electronic music labels in China. Check it [here](/portfolio/sunset_sea/)!
+- My first electronic music piece has been released under *CEM Records*, one of the most prestigious electronic music labels in China. Check it [here](/portfolio/sunset-sea/)!
 
 ## For More Information
 
