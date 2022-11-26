@@ -6,7 +6,7 @@ type: "Programming Project"
 collection: projects
 ---
 
-This project is assigned in CS420 course. It is a naive mimicking project that tries to classify different audio types using machine learning methods. I referred to [this project](https://github.com/JaehunKim-DeepLearning/Dcase2020_Task5) heavily.
+I chose the audio classification task as the open-topic course project for Machine Learning (CS420). I implemented an audio classification model that adopted pre-trained EfficientNet. To enhance its discernment of audio traits, I extracted harmonic and percussive features from audio data using Harmonic Percussive Source Separation (HPSS), and fed them into EfficientNet for fine-tuning.
 
 - You can see my mini paper [here](https://github.com/aik2mlj/Audiobia/blob/master/minipaper.pdf).
 
