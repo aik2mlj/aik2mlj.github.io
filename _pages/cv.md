@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-<iframe src="/files/Lejun Min CV.pdf" style="width: 800px;height: 2100px;border: none;"></iframe>
+<iframe src="/files/Lejun Min CV.pdf" style="width: 800px;height: 1200px;border: none;"></iframe>
