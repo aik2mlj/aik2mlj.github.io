@@ -231,8 +231,8 @@ defaults:
     values:
       layout: single
       author_profile: false
-      share: true
-      comments: true
+      share: false
+      comments: false
   # _portfolio
   - scope:
       path: ""
