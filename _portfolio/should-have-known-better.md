@@ -1,6 +1,6 @@
 ---
-title: "Should Have Known Better (cover)"
-excerpt: "Piano, Synth & Singing Performance<br/><br/><img src='/images/should_have_known_better.png' width='60%'>"
+title: "Should Have Known Better (piano & synth cover)"
+excerpt: "Piano, Synth & Singing Performance<br/><br/><img src='/images/should_have_known_better.png' width='40%'>"
 date: 2023-02-08
 type: "Music"
 collection: portfolio
