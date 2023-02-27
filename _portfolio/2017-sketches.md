@@ -1,5 +1,5 @@
 ---
-title: "Sketches inherited from high school"
+title: "Sketches"
 excerpt: "Innocent adolescence.<br/><br/><img src='/images/sketch2.jpg' width='60%'>"
 date: 2017-12-01
 type: "Painting"
