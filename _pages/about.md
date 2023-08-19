@@ -8,17 +8,15 @@ redirect_from:
   - /about.html
 ---
 
-Hi👋, I am a senior undergraduate researcher interested in **Computer Music**. Majoring in **C**omputer **S**cience at [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/), I am a member of [**ACM Honor Class**](https://acm.sjtu.edu.cn/home), an elite CS program with extensive academic reputation.
+Hi👋, I am Lejun, a researcher and young artist interested in <font color="yellow">**Computer Music**</font>. Graduated from [Shanghai Jiao Tong University](https://en.sjtu.edu.cn/), I was formerly a member of [**ACM Honor Class**](https://acm.sjtu.edu.cn/home), an elite CS program with extensive academic reputation. I will join MBZUAI as a full-time research assistant in Fall 2023, and begin my master's program at [CCRMA](https://ccrma.stanford.edu/), Stanford in Fall 2024!
 
-My dream is to bring people closer to artistic creativity, with interdisciplinary research on music, media, and computer science. I am passionate about music representation learning, controllable music generation, machine improvisation, and human-computer interaction. My research interest can be aligned into two directions: 1. instilling creativity into machine learning models, especially for music generation; 2. provoking human creativity via interactive intelligent systems for music creation and improvisation.
+My dream is to bring people closer to artistic creativity, with interdisciplinary research on music, media, and computer science. I am passionate about controllable music generation, music representation learning, machine improvisation, and human-computer interaction. My research interest can be aligned into two directions: 1. instilling creativity into machine learning models, especially for music generation; 2. provoking human creativity via interactive intelligent systems for music creation and improvisation.
 
 As a versatile player, I can play [guzheng](https://en.wikipedia.org/wiki/Guzheng) and piano, produce and mix electronic music, paint and design visual art, compose puerile poems written in Chinese calligraphy, [ollie](https://en.wikipedia.org/wiki/Ollie_(skateboarding)) over 2 skateboards, hold spiritual conversations on literature / philosophy, and make a good friend within 5 minutes.
 
 ## Selected Work
 
-- I'm working on a deep music generation project with [Prof. Gus Xia](https://www.cs.cmu.edu/~gxia/) at [Music X Lab](http://www.musicxlab.com), NYU Shanghai.
-    - We introduce *Diffusion Models* to the polyphonic score generation task by devising an image-like piano-roll format for the training, and generalize two ways of adding controls: by masked generation, and by cross-attention mechanism. Our model unifies a wide range of downstream musical applications such as melody/accompaniment generation, music segment inpainting, chord/texture-specified music arrangement, etc. The paper has been submitted to **IJCAI 2023**, me being the first author. The abstract/demos can be found [here](/publications/piano-roll-diffusion).
-    - For that, I have been hired as a research assistant in [MBZUAI](https://mbzuai.ac.ae/), Abu Dhabi, UAE.
+- Our work on controllable music generation with diffusion model has been accepted by **ISMIR 2023**! Check the publication page [here](/publications/polyffusion/).
 - I did research on **T**heoretical **C**omputer **S**cience formerly with [Prof. Chihao Zhang](http://chihaozhang.com), SJTU.
 - My first electronic music piece has been released under *CEM Records*, one of the most prestigious electronic music labels in China. Check it [here](/portfolio/sunset-sea/)!
 
