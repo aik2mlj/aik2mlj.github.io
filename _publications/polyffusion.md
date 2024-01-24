@@ -1,12 +1,12 @@
 ---
 title: "Polyffusion: A Diffusion Model for Polyphonic Score Generation with Internal and External Controls"
 collection: publications
-excerpt: 'Lejun Min, Junyan Jiang, Gus Xia, Jingwei Zhao<br/>In Proceedings of the 24th International Society for Music Information Retrieval Conference, ISMIR'
+excerpt: '<b>Lejun Min</b>, Junyan Jiang, Gus Xia, Jingwei Zhao<br/>In Proceedings of the 24th International Society for Music Information Retrieval Conference, ISMIR'
 # date: 2009-10-01
 # venue: 'Under Preparation'
 ---
 
-Lejun Min, Junyan Jiang, Gus Xia, Jingwei Zhao
+**Lejun Min**, Junyan Jiang, Gus Xia, Jingwei Zhao
 
 In Proceedings of the 24th International Society for Music Information Retrieval Conference, ISMIR
 

@@ -16,6 +16,7 @@ As a versatile player, I can play [guzheng](https://en.wikipedia.org/wiki/Guzhen
 
 ## Selected Work
 
+- New work modeling whole-song piano music with hierarchical language and cascaded diffusion model has been accepted as **spotlight paper (top 5%)** at **ICLR 2024**! Check the publication page [here](/publications/wholesonggen/).
 - Our work on controllable music generation with diffusion model has been accepted by **ISMIR 2023**! Check the publication page [here](/publications/polyffusion/).
 - I did research on **T**heoretical **C**omputer **S**cience formerly with [Prof. Chihao Zhang](http://chihaozhang.com), SJTU.
 - My first electronic music piece has been released under *CEM Records*, one of the most prestigious electronic music labels in China. Check it [here](/portfolio/sunset-sea/)!
