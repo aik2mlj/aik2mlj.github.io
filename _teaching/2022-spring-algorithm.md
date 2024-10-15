@@ -1,7 +1,7 @@
 ---
 title: "Design and Analysis of Algorithms"
 collection: teaching
-type: "TA for Undergraduate Course"
+type: "Teaching Assistant"
 permalink: /teaching/2022-spring-algorithm
 venue: "ACM Class, Zhiyuan College, SJTU"
 date: 2022-03-01
