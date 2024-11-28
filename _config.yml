@@ -86,7 +86,7 @@ author:
   location         : "Stanford, California"
   employer         :
   # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  # googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    : "https://scholar.google.com/citations?user=c4NFuSEAAAAJ"
   email            : "aik2mlj@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -102,14 +102,14 @@ author:
   instagram        : "aik2mlj"
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/lejun-min-1981a5254/"
+  linkedin         : "lejun-min-1981a5254"
   # orcid            : "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       : "aik2mlj"
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "aik2mlj"
+  # twitter          : "aik2mlj"
   vine             :
   weibo            :
   xing             :
