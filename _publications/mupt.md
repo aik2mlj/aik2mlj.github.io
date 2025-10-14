@@ -1,7 +1,9 @@
 ---
 title: "MuPT: A Generative Symbolic Music Pretrained Transformer"
 collection: publications
-excerpt: 'Xingwei Qu, Yuelin Bai, Yinghao Ma, Ziya Zhou, Ka Man Lo, Jiaheng Liu, Ruibin Yuan, <b>Lejun Min</b>, Xueling Liu, Tianyu Zhang, Xinrun Du, Shuyue Guo, Yiming Liang, Yizhi Li, Shangda Wu, Junting Zhou, Tianyu Zheng, Ziyang Ma, Fengze Han, Wei Xue, Gus Xia, Emmanouil Benetos, Xiang Yue, Chenghua Lin, Xu Tan, Stephen W. Huang, Jie Fu, Ge Zhang<br/>In Proc. 13th International Conference on Learning Representations (ICLR 2025)'
+excerpt: 'In Proc. 13th International Conference on Learning Representations (ICLR 2025)'
+date: 2025-04-01
+# venue: 'Under Preparation'
 ---
 
 Xingwei Qu, Yuelin Bai, Yinghao Ma, Ziya Zhou, Ka Man Lo, Jiaheng Liu, Ruibin Yuan, **Lejun Min**, Xueling Liu, Tianyu Zhang, Xinrun Du, Shuyue Guo, Yiming Liang, Yizhi Li, Shangda Wu, Junting Zhou, Tianyu Zheng, Ziyang Ma, Fengze Han, Wei Xue, Gus Xia, Emmanouil Benetos, Xiang Yue, Chenghua Lin, Xu Tan, Stephen W. Huang, Jie Fu, Ge Zhang

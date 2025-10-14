@@ -2,7 +2,7 @@
 title: "Whole-song Hierarchical Generation of Symbolic Music Using Cascaded Diffusion Models"
 collection: publications
 excerpt: "Ziyu Wang, <b>Lejun Min</b>, Gus Xia<br/><b>Spotlight (top 5%)</b> in Proc. 12th International Conference on Learning Representations (ICLR 2024)"
-# date: 2009-10-01
+date: 2024-05-01
 # venue: 'Under Preparation'
 ---
 
