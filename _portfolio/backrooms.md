@@ -1,6 +1,6 @@
 ---
 title: "The Backrooms: Audio Drama"
-excerpt: "The protagonist suddenly no-clipped into a weird space where he witnessed (or better, heard) things beyond his comprehension.<br/><br/><img src='https://i.imgur.com/KGgla23.png' width='60%'>"
+excerpt: "The protagonist suddenly no-clipped into a weird space where he witnessed (or better, heard) things beyond his comprehension."
 date: 2024-12-01
 type: "Interactive Audiovisual Design"
 collection: portfolio
