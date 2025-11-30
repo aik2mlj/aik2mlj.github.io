@@ -1,4 +1,75 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<!-- Dark Reader -->
+<script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.80/darkreader.min.js"></script>
+
+<!-- Dark mode toggle script -->
+<script>
+  (function() {
+    const darkModeSettings = {
+      brightness: 100,
+      contrast: 90,
+      sepia: 10
+    };
+
+    // Check for saved user preference or default to system preference
+    function getDarkModePreference() {
+      const savedMode = localStorage.getItem('darkMode');
+      if (savedMode !== null) {
+        return savedMode === 'true';
+      }
+      // Default to system preference
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    // Apply dark mode
+    function enableDarkMode() {
+      DarkReader.enable(darkModeSettings);
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'true');
+    }
+
+    // Disable dark mode
+    function disableDarkMode() {
+      DarkReader.disable();
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', 'false');
+    }
+
+    // Initialize dark mode based on preference
+    if (getDarkModePreference()) {
+      enableDarkMode();
+    }
+
+    // Wait for DOM to load before attaching toggle listener
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('dark-mode-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          if (document.body.classList.contains('dark-mode')) {
+            disableDarkMode();
+          } else {
+            enableDarkMode();
+          }
+        });
+      }
+    });
+
+    // Listen for system preference changes
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        // Only auto-switch if user hasn't manually set a preference
+        if (localStorage.getItem('darkMode') === null) {
+          if (e.matches) {
+            enableDarkMode();
+          } else {
+            disableDarkMode();
+          }
+        }
+      });
+    }
+  })();
+</script>
+
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}
