@@ -16,7 +16,7 @@ As a versatile player, I can play [guzheng](https://en.wikipedia.org/wiki/Guzhen
 
 ## Recent Updates
 
-- [2025-10] I started working as a research intern at [Smule](https://www.smule.com/)'s AI Lab in Fall 2025, supervised by Yongyi Zang.
+- [2025-10] I started working as a research intern at [Smule Labs](https://labs.smule.com/about/) in Fall 2025, supervised by Yongyi Zang.
 - [2025-09] I finished my research internship at the [music team](https://cslmusicteam.sony.fr/) of [Sony CSL Paris](https://csl.sony.fr/) in summer 2025, where I worked with Dr. Stefan Lattner on **End-to-end Automatic Mixing with Generative Models**. Stay in tune for the future publication!
 - [2024-05] New work modeling whole-song piano music with hierarchical language and cascaded diffusion model has been accepted as **spotlight paper (top 5%)** at **ICLR 2024**! Check the publication page [here](/publications/wholesonggen/).
 - [2023-11] Our work on controllable music generation with diffusion model has been accepted by **ISMIR 2023**! Check the publication page [here](/publications/polyffusion/).
