@@ -1,0 +1,36 @@
+---
+import { authorsHtml, getItems } from '../lib/entries';
+
+const publications = await getItems('publications');
+---
+
+<ul class="rows">
+  {
+    publications.map((item) => {
+      const { authors, note, links } = item.entry.data;
+      return (
+        <li>
+          <span class="meta">{item.label}</span>
+          <div>
+            {item.hasPage ? (
+              <a class="title" href={item.url}>
+                {item.title}
+              </a>
+            ) : (
+              <span class="title">{item.title}</span>
+            )}
+            {note && <span class="badge">{note}</span>}
+            {authors && <p set:html={authorsHtml(authors)} />}
+            {links.length > 0 && (
+              <p class="meta inline-links">
+                {links.map((link) => (
+                  <a href={link.url}>{link.label}</a>
+                ))}
+              </p>
+            )}
+          </div>
+        </li>
+      );
+    })
+  }
+</ul>

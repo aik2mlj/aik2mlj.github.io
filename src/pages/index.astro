@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+import Roll from '../components/Roll.astro';
+import { getAllItems, monthYear } from '../lib/entries';
+import { news } from '../data/news';
+import { site } from '../data/site';
+
+const items = await getAllItems();
+const recent = items.slice(0, 6);
+---
+
+<Base home>
+  <section class="hero">
+    <p class="hero-zh" lang="zh-Hans" aria-hidden="true">{site.nameZh}</p>
+    <div>
+      <h1>{site.name}</h1>
+      <p class="hero-line">
+        Audio ML researcher and sound artist at Stanford’s CCRMA. I train models that generate music and sound, and
+        build instruments out of things like skateboards.
+      </p>
+      <p class="meta inline-links">
+        <a href="/about/">About me</a>
+        <a href="/cv/">CV</a>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
+    </div>
+  </section>
+
+  <Roll items={items} />
+
+  <div class="columns">
+    <section>
+      <h2>Recent</h2>
+      <ul class="rows">
+        {
+          recent.map((item) => (
+            <li>
+              <span class="meta">{monthYear(item.date)}</span>
+              <div>
+                <a class="title" href={item.url}>
+                  {item.title}
+                </a>
+                <p>{item.label}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h2>News</h2>
+      <ul class="rows">
+        {
+          news.slice(0, 4).map((entry) => (
+            <li>
+              <span class="meta">{entry.date}</span>
+              <p set:html={entry.text} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2rem);
+    padding-block: clamp(1.5rem, 6vw, 4rem) clamp(2.5rem, 7vw, 4.5rem);
+  }
+
+  .hero-zh {
+    writing-mode: vertical-rl;
+    font-size: clamp(1.9rem, 5vw, 3.1rem);
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin: 0.1em 0 0;
+    color: var(--seal);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 8vw, 5rem);
+  }
+
+  .hero-line {
+    max-width: 34rem;
+    margin: 1.1rem 0 1.2rem;
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    line-height: 1.45;
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: 3rem clamp(2rem, 5vw, 4rem);
+    margin-top: 4.5rem;
+  }
+
+  .columns h2 {
+    margin-bottom: 1.1rem;
+  }
+
+  .columns .rows > li {
+    grid-template-columns: 5.5rem 1fr;
+  }
+
+  .columns .rows > li > p {
+    margin: 0;
+    color: var(--ink);
+  }
+</style>

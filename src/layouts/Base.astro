@@ -1,0 +1,101 @@
+---
+import '@fontsource/fira-sans/400.css';
+import '@fontsource/fira-sans/400-italic.css';
+import '@fontsource/fira-sans/500.css';
+import '@fontsource/fira-sans/600.css';
+import '@fontsource/fira-mono/400.css';
+import 'lxgw-wenkai-webfont/lxgwwenkai-regular.css';
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import profile from '../assets/profile.jpg';
+import { nav, site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** The home page shows its own large name mark instead of the header one. */
+  home?: boolean;
+}
+
+const { title, description = site.description, home = false } = Astro.props;
+const pageTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.tagline}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL((await getImage({ src: profile, width: 600, format: 'jpg' })).src, Astro.site);
+const path = Astro.url.pathname.replace(/\/?$/, '/');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={site.name} href="/feed.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title ?? site.name} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    <script is:inline>
+      // Apply a saved theme before first paint.
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <header class="site-header wrap">
+      {
+        !home && (
+          <a class="mark" href="/">
+            <span class="mark-zh" lang="zh-Hans" aria-hidden="true">
+              {site.nameZh}
+            </span>
+            <span>{site.name}</span>
+          </a>
+        )
+      }
+      <nav class="site-nav" aria-label="Main">
+        {
+          nav.map((item) => (
+            <a href={item.url} aria-current={path.startsWith(item.url) ? 'page' : undefined}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site-footer wrap meta">
+      <span>© {new Date().getFullYear()} {site.name}</span>
+      <span>{site.email}</span>
+      {site.links.slice(0, 4).map((link) => <a href={link.url}>{link.label}</a>)}
+      <span class="spacer"></span>
+      <button class="text-button" type="button" id="theme-toggle">switch theme</button>
+    </footer>
+
+    <script>
+      const button = document.getElementById('theme-toggle');
+      button?.addEventListener('click', () => {
+        const root = document.documentElement;
+        const dark = root.dataset.theme
+          ? root.dataset.theme === 'dark'
+          : matchMedia('(prefers-color-scheme: dark)').matches;
+        const next = dark ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch {}
+      });
+    </script>
+  </body>
+</html>

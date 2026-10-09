@@ -1,0 +1,387 @@
+---
+// The home page index: a piano roll strung like a guzheng. Time runs left to right,
+// each lane is three strings, each piece of work is a note sitting on a string.
+import { LANES } from '../lib/lanes';
+import { monthYear, type Item } from '../lib/entries';
+
+interface Props {
+  items: Item[];
+}
+
+const STRINGS_PER_LANE = 3;
+const STRING_GAP = 13;
+const LANE_GAP = 12;
+const PAD = 12;
+const NOTE_DAYS = 60;
+const DAY = 86_400_000;
+
+const items = [...Astro.props.items].sort((a, b) => +a.date - +b.date);
+const first = items[0].date.getUTCFullYear();
+const start = Date.UTC(first, 0, 1);
+const end = Math.max(Date.now(), +items[items.length - 1].date) + 90 * DAY;
+const span = end - start;
+const fraction = (time: number) => (time - start) / span;
+
+const rowOf = (lane: number, string: number) => lane * STRINGS_PER_LANE + string;
+const yOf = (row: number) => {
+  const lane = Math.floor(row / STRINGS_PER_LANE);
+  return PAD + lane * (STRINGS_PER_LANE * STRING_GAP + LANE_GAP) + (row % STRINGS_PER_LANE) * STRING_GAP;
+};
+const rows = LANES.length * STRINGS_PER_LANE;
+const height = yOf(rows - 1) + PAD;
+
+// Notes that overlap in time within a lane move to a neighbouring string. The middle
+// string fills first so that sparse lanes stay centred.
+const order = [1, 0, 2];
+const freeAt = LANES.map(() => Array<number>(STRINGS_PER_LANE).fill(-Infinity));
+const notes = items.map((item) => {
+  const lane = LANES.indexOf(item.lane);
+  const time = +item.date;
+  const string =
+    order.find((s) => freeAt[lane][s] <= time) ?? order.reduce((a, b) => (freeAt[lane][a] <= freeAt[lane][b] ? a : b));
+  freeAt[lane][string] = time + NOTE_DAYS * DAY;
+  const row = rowOf(lane, string);
+  return { item, row, x: fraction(time), y: yOf(row), meta: `${item.label}, ${monthYear(item.date)}` };
+});
+
+const noteWidth = (NOTE_DAYS * DAY) / span;
+const years = Array.from({ length: new Date(end).getUTCFullYear() - first + 1 }, (_, i) => first + i).map((year) => ({
+  year,
+  x: fraction(Date.UTC(year, 0, 1)),
+}));
+---
+
+<section class="roll" aria-label="Everything on this site, over time">
+  <div class="bar">
+    <p class="meta">{rows} strings · {first} → now</p>
+    <span class="spacer"></span>
+    <button class="text-button" type="button" data-roll-play>▶ play</button>
+    <button class="text-button" type="button" data-roll-sound aria-pressed="false">sound: off</button>
+  </div>
+
+  <div class="body">
+    <div class="lanes meta" style={`height:${height}px`} aria-hidden="true">
+      {LANES.map((lane, i) => <span style={`top:${yOf(rowOf(i, 1))}px`}>{lane}</span>)}
+    </div>
+
+    <div class="scroll" data-roll-scroll>
+      <div class="sheet" style={`height:${height}px`}>
+        <svg viewBox={`0 0 1000 ${height}`} preserveAspectRatio="none" aria-hidden="true">
+          {years.map(({ x }) => <line class="year" x1={x * 1000} x2={x * 1000} y1="0" y2={height} />)}
+          {
+            Array.from({ length: rows }, (_, row) => (
+              <path class="string" data-row={row} data-y={yOf(row)} d={`M0 ${yOf(row)} L1000 ${yOf(row)}`} />
+            ))
+          }
+        </svg>
+
+        <ol>
+          {
+            notes.map(({ item, row, x, y, meta }) => (
+              <li>
+                <a
+                  class="note"
+                  href={item.url}
+                  style={`left:${(x * 100).toFixed(3)}%;top:${y}px;width:${(noteWidth * 100).toFixed(3)}%`}
+                  data-row={row}
+                  data-x={x.toFixed(4)}
+                  data-title={item.title}
+                  data-meta={meta}
+                  aria-label={`${item.title}: ${meta}`}
+                />
+              </li>
+            ))
+          }
+        </ol>
+
+        <div class="playhead" data-roll-playhead hidden></div>
+      </div>
+
+      <div class="axis meta" aria-hidden="true">
+        {
+          // A year that starts too close to the right edge has no room for its label.
+          years
+            .filter(({ x }) => x < 0.96)
+            .map(({ year, x }) => <span style={`left:${(x * 100).toFixed(3)}%`}>{year}</span>)
+        }
+      </div>
+    </div>
+  </div>
+
+  <p class="caption" data-roll-caption>
+    <span class="caption-title">Every bar is something I made.</span>
+    <span class="meta">Hover to pluck it, click to open it.</span>
+  </p>
+</section>
+
+<style>
+  .roll {
+    --note-h: 8px;
+  }
+
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .bar p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+  }
+
+  .lanes {
+    position: relative;
+  }
+
+  .lanes span {
+    position: absolute;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--rule) transparent;
+  }
+
+  .sheet,
+  .axis {
+    position: relative;
+    min-width: 52rem;
+  }
+
+  svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .string,
+  .year {
+    fill: none;
+    stroke: var(--rule);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .year {
+    stroke-dasharray: 1 5;
+  }
+
+  .string.is-on {
+    stroke: var(--ink);
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .note {
+    position: absolute;
+    min-width: 12px;
+    height: var(--note-h);
+    margin-top: calc(var(--note-h) / -2);
+    border-radius: 2px;
+    background: var(--ink);
+    transition:
+      background-color 0.15s,
+      transform 0.15s;
+  }
+
+  /* A taller hit area than the bar itself. */
+  .note::before {
+    content: '';
+    position: absolute;
+    inset: -3px 0;
+  }
+
+  .note:hover,
+  .note:focus-visible,
+  .note.is-on {
+    background: var(--seal);
+    transform: scaleY(1.45);
+    z-index: 1;
+  }
+
+  .playhead {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--seal);
+    pointer-events: none;
+  }
+
+  .axis {
+    height: 1.6rem;
+    margin-top: 0.4rem;
+  }
+
+  .axis span {
+    position: absolute;
+    padding-left: 0.35rem;
+  }
+
+  .caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.9rem;
+    min-height: 3.4em;
+    margin: 0.75rem 0 0;
+    padding-left: 4.5rem;
+  }
+
+  .caption-title {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 40rem) {
+    .body {
+      grid-template-columns: 4.3rem minmax(0, 1fr);
+    }
+
+    .caption {
+      padding-left: 0;
+    }
+  }
+</style>
+
+<script>
+  import { Guzheng, STRING_COUNT } from '../scripts/pluck';
+
+  const root = document.querySelector<HTMLElement>('.roll');
+  if (root) {
+    const notes = [...root.querySelectorAll<HTMLAnchorElement>('.note')];
+    const strings = [...root.querySelectorAll<SVGPathElement>('.string')];
+    const scroll = root.querySelector<HTMLElement>('[data-roll-scroll]')!;
+    const playhead = root.querySelector<HTMLElement>('[data-roll-playhead]')!;
+    const caption = root.querySelector<HTMLElement>('[data-roll-caption]')!;
+    const playButton = root.querySelector<HTMLButtonElement>('[data-roll-play]')!;
+    const soundButton = root.querySelector<HTMLButtonElement>('[data-roll-sound]')!;
+    const [captionTitle, captionMeta] = [...caption.children] as HTMLElement[];
+    const calm = matchMedia('(prefers-reduced-motion: reduce)');
+    const guzheng = new Guzheng();
+
+    // On narrow screens the sheet scrolls; start at the present.
+    scroll.scrollLeft = scroll.scrollWidth;
+
+    // --- String vibration -------------------------------------------------
+    const RING = 1100; // ms
+    const ringing = new Map<SVGPathElement, { x: number; since: number }>();
+    let frame = 0;
+
+    function draw(now: number) {
+      for (const [string, { x, since }] of ringing) {
+        const y = Number(string.dataset.y);
+        const t = now - since;
+        if (t > RING) {
+          string.setAttribute('d', `M0 ${y} L1000 ${y}`);
+          string.classList.remove('is-on');
+          ringing.delete(string);
+          continue;
+        }
+        const offset = 5 * Math.exp(-t / 260) * Math.cos(t / 14);
+        string.setAttribute('d', `M0 ${y} L${x * 1000} ${y + offset} L1000 ${y}`);
+      }
+      frame = ringing.size ? requestAnimationFrame(draw) : 0;
+    }
+
+    function pluck(note: HTMLAnchorElement) {
+      const row = Number(note.dataset.row);
+      const x = Number(note.dataset.x);
+      captionTitle.textContent = note.dataset.title ?? '';
+      captionMeta.textContent = note.dataset.meta ?? '';
+      // The top row is the highest string, as on the instrument.
+      guzheng.pluck(STRING_COUNT - 1 - row, x * 1.6 - 0.8);
+      if (calm.matches) return;
+      const string = strings[row];
+      string.classList.add('is-on');
+      ringing.set(string, { x, since: performance.now() });
+      frame ||= requestAnimationFrame(draw);
+    }
+
+    for (const note of notes) {
+      note.addEventListener('pointerenter', () => pluck(note));
+      note.addEventListener('focus', () => pluck(note));
+    }
+
+    // Arrow keys step through the notes in time order.
+    root.addEventListener('keydown', (event) => {
+      const step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+      const index = notes.indexOf(document.activeElement as HTMLAnchorElement);
+      if (!step || index < 0) return;
+      event.preventDefault();
+      notes[index + step]?.focus();
+    });
+
+    // --- Sound ------------------------------------------------------------
+    function showSound() {
+      soundButton.setAttribute('aria-pressed', String(guzheng.enabled));
+      soundButton.textContent = guzheng.enabled ? 'sound: on' : 'sound: off';
+    }
+
+    soundButton.addEventListener('click', async () => {
+      await (guzheng.enabled ? guzheng.disable() : guzheng.enable());
+      showSound();
+    });
+
+    // --- Playback: a playhead sweeps the sheet and plucks what it crosses ----
+    const SWEEP = 22_000; // ms
+    let playing = 0;
+
+    function stop() {
+      cancelAnimationFrame(playing);
+      playing = 0;
+      playhead.hidden = true;
+      playButton.textContent = '▶ play';
+      notes.forEach((note) => note.classList.remove('is-on'));
+    }
+
+    async function play() {
+      await guzheng.enable();
+      showSound();
+      playButton.textContent = '■ stop';
+      playhead.hidden = calm.matches;
+      const began = performance.now();
+      let next = 0;
+
+      const tick = (now: number) => {
+        const position = (now - began) / SWEEP;
+        while (next < notes.length && Number(notes[next].dataset.x) <= position) {
+          const note = notes[next++];
+          pluck(note);
+          note.classList.add('is-on');
+          setTimeout(() => note.classList.remove('is-on'), 450);
+        }
+        playhead.style.left = `${position * 100}%`;
+        // Keep the playhead in view when the sheet is wider than the screen.
+        const overflow = scroll.scrollWidth - scroll.clientWidth;
+        if (overflow > 0) scroll.scrollLeft = position * scroll.scrollWidth - scroll.clientWidth / 2;
+        if (position >= 1) return stop();
+        playing = requestAnimationFrame(tick);
+      };
+      playing = requestAnimationFrame(tick);
+    }
+
+    playButton.addEventListener('click', () => (playing ? stop() : play()));
+  }
+</script>

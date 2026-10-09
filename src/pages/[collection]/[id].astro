@@ -1,0 +1,59 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { authorsHtml, getAllItems, indexUrl, monthYear, isoDate, type Item } from '../../lib/entries';
+
+export async function getStaticPaths() {
+  const items = await getAllItems();
+  return items
+    .filter((item) => item.hasPage)
+    .map((item) => ({ params: { collection: item.collection, id: item.entry.id }, props: { item } }));
+}
+
+interface Props {
+  item: Item;
+}
+
+const { item } = Astro.props;
+const { data } = item.entry;
+const { Content } = await render(item.entry);
+const zh = item.collection === 'literature';
+const backLabel = {
+  portfolio: 'All work',
+  projects: 'All projects',
+  publications: 'All research',
+  talks: 'All research',
+  teaching: 'All research',
+  literature: 'All writing',
+}[item.collection];
+const where = [data.venue, data.location].filter(Boolean).join(', ');
+---
+
+<Base title={item.title} description={data.summary}>
+  <article>
+    <header class="page-head">
+      <p class="meta">
+        {item.lane} · {!zh && `${item.label} · `}<time datetime={isoDate(item.date)}>{monthYear(item.date)}</time>
+      </p>
+      <h1 lang={zh ? 'zh-Hans' : undefined}>{item.title}</h1>
+      {data.authors && <p class="lede" set:html={authorsHtml(data.authors)} />}
+      {item.collection !== 'publications' && where && <p class="lede">{where}</p>}
+      {
+        (data.note || data.links.length > 0) && (
+          <p class="meta inline-links" style="margin-top: 1rem">
+            {data.note && <span>{data.note}</span>}
+            {data.links.map((link) => (
+              <a href={link.url}>{link.label}</a>
+            ))}
+          </p>
+        )
+      }
+    </header>
+
+    <div class="prose" lang={zh ? 'zh-Hans' : undefined}>
+      <Content />
+    </div>
+
+    <a class="back meta" href={indexUrl(item.collection)}>← {backLabel}</a>
+  </article>
+</Base>

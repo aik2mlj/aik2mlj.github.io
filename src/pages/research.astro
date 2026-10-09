@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import PubList from '../components/PubList.astro';
+import { getItems, monthYear } from '../lib/entries';
+import { experience } from '../data/cv';
+import { site } from '../data/site';
+
+const talks = await getItems('talks');
+const teaching = await getItems('teaching');
+const scholar = site.links.find((link) => link.label === 'Google Scholar')!;
+---
+
+<Base title="Research" description="Publications, research experience, talks and teaching by Lejun Min in generative audio, music generation and audio representation learning.">
+  <header class="page-head">
+    <h1>Research</h1>
+    <p class="lede">
+      Generative audio and music, audio representation learning and signal processing: from symbolic music generation
+      with diffusion models to neural audio tokenizers and deepfake detection.
+    </p>
+  </header>
+
+  <section class="section" id="publications">
+    <h2>Publications</h2>
+    <PubList />
+    <p class="meta" style="margin-top: 1rem">Also on <a href={scholar.url}>Google Scholar</a>.</p>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Experience</h2>
+    <ul class="rows">
+      {
+        experience.map((job) => (
+          <li>
+            <span class="meta">{job.dates}</span>
+            <div>
+              <span class="title">{job.place}</span>
+              <p>{job.role}</p>
+              <ul>
+                {job.points.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section" id="talks">
+    <h2>Talks</h2>
+    <ul class="rows">
+      {
+        talks.map((item) => (
+          <li>
+            <span class="meta">{monthYear(item.date)}</span>
+            <div>
+              <a class="title" href={item.url}>
+                {item.title}
+              </a>
+              <p>{item.entry.data.venue}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section" id="teaching">
+    <h2>Teaching</h2>
+    <ul class="rows">
+      {
+        teaching.map((item) => (
+          <li>
+            <span class="meta">{monthYear(item.date)}</span>
+            <div>
+              <a class="title" href={item.url}>
+                {item.title}
+              </a>
+              <p>
+                {item.label}, {item.entry.data.venue}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>

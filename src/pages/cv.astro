@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import PubList from '../components/PubList.astro';
+import { education, experience, skills } from '../data/cv';
+import { site } from '../data/site';
+---
+
+<Base title="CV" description="Curriculum vitae of Lejun Min, audio ML researcher: education, research experience, publications and skills.">
+  <header class="page-head">
+    <h1>CV</h1>
+    <p class="lede">{site.tagline}. {site.location}.</p>
+    <p class="downloads">
+      <a class="text-button" href={site.files.resume}>Résumé, 1 page (PDF)</a>
+      <a class="text-button" href={site.files.cv}>Full CV (PDF)</a>
+    </p>
+  </header>
+
+  <section class="section">
+    <h2>Education</h2>
+    <ul class="rows">
+      {
+        education.map((school) => (
+          <li>
+            <span class="meta">{school.dates}</span>
+            <div>
+              <span class="title">{school.place}</span>
+              <p>{school.degree}</p>
+              <ul>
+                {school.points.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Experience</h2>
+    <ul class="rows">
+      {
+        experience.map((job) => (
+          <li>
+            <span class="meta">{job.dates}</span>
+            <div>
+              <span class="title">{job.place}</span>
+              <p>{job.role}</p>
+              <ul>
+                {job.points.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Publications</h2>
+    <PubList />
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <ul class="rows">
+      {
+        skills.map((skill) => (
+          <li>
+            <span class="meta">{skill.group}</span>
+            <p class="skills">{skill.items.join(' · ')}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .downloads a {
+    text-decoration: none;
+  }
+
+  .rows .skills {
+    margin: 0;
+    color: var(--ink);
+  }
+</style>

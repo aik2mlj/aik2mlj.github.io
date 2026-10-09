@@ -1,0 +1,26 @@
+---
+import Cover from './Cover.astro';
+import { monthYear, type Item } from '../lib/entries';
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="cover-grid">
+  {
+    items.map((item) => (
+      <li class="cover-card" data-lane={item.lane}>
+        <a href={item.url}>
+          <Cover cover={item.entry.data.cover} fallback={item.title} />
+          <h3>{item.title}</h3>
+          <p class="meta">
+            {item.label} · {monthYear(item.date)}
+          </p>
+        </a>
+      </li>
+    ))
+  }
+</ul>

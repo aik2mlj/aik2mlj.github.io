@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import { firstLine, getItems, monthYear } from '../../lib/entries';
+
+const items = await getItems('literature');
+---
+
+<Base title="Writing" description="Short stories, poems and essays in Chinese by Lejun Min.">
+  <header class="page-head">
+    <h1>Writing</h1>
+    <p class="lede">Short stories, poems and essays. I write these in Chinese.</p>
+  </header>
+
+  <ul class="rows">
+    {
+      items.map((item) => (
+        <li>
+          <span class="meta">{monthYear(item.date)}</span>
+          <div lang="zh-Hans">
+            <a class="title" href={item.url}>
+              {item.title}
+            </a>
+            <p>{firstLine(item.entry.body)}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
+
+<style>
+  .title {
+    font-size: 1.35rem;
+    font-weight: 400;
+  }
+
+  .rows p {
+    max-width: 34rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

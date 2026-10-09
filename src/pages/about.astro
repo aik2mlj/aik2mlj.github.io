@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import profile from '../assets/profile.jpg';
+import { news } from '../data/news';
+import { site } from '../data/site';
+---
+
+<Base title="About">
+  <header class="page-head">
+    <h1>About</h1>
+  </header>
+
+  <div class="about">
+    <div class="prose">
+      <p>
+        I’m Lejun, an audio ML researcher and sound artist. I’m finishing a master’s in Music, Science, and Technology
+        at <a href="https://ccrma.stanford.edu/">CCRMA</a>, Stanford, advised by Marina Bosi and Takako Fujioka. Before
+        that I studied computer science in the <a href="https://acm.sjtu.edu.cn/home">ACM Honor Class</a> at Shanghai
+        Jiao Tong University and was a research assistant at Music X Lab, <a href="https://mbzuai.ac.ae/">MBZUAI</a>.
+      </p>
+      <p>
+        My research covers generative audio and music, audio representation learning and signal processing: from
+        symbolic music generation with diffusion models to neural audio tokenizers and deepfake detection. I have
+        interned at Qwen Audio (Alibaba), <a href="https://labs.smule.com/about/">Smule Labs</a> and{' '}
+        <a href="https://csl.sony.fr/">Sony CSL Paris</a>.
+      </p>
+      <p>
+        My dream is to bring people closer to artistic creativity. That pulls in two directions: instilling creativity
+        into machine learning models, and provoking human creativity through interactive systems for making and
+        improvising music.
+      </p>
+      <p>
+        Outside research I play <a href="https://en.wikipedia.org/wiki/Guzheng">guzheng</a> and piano, produce and mix
+        electronic music, paint, compose puerile poems in Chinese calligraphy,{' '}
+        <a href="https://en.wikipedia.org/wiki/Ollie_(skateboarding)">ollie</a> over two skateboards, hold spiritual conversations
+        on literature and philosophy, and make a good friend within five minutes.
+      </p>
+      <p class="meta inline-links">
+        <a href="/cv/">CV</a>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+        {site.links.map((link) => <a href={link.url}>{link.label}</a>)}
+      </p>
+    </div>
+
+    <Image class="portrait" src={profile} alt="Lejun Min looking down at an instrument during a performance" width={420} />
+  </div>
+
+  <section class="section" style="margin-top: 3rem">
+    <h2>News</h2>
+    <ul class="rows">
+      {
+        news.map((entry) => (
+          <li>
+            <span class="meta">{entry.date}</span>
+            <p class="news" set:html={entry.text} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .about {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: flex-start;
+    gap: 2rem clamp(2rem, 6vw, 5rem);
+  }
+
+  .about .prose {
+    flex: 1 1 24rem;
+  }
+
+  .portrait {
+    width: min(100%, 17rem);
+    border-radius: 3px;
+  }
+
+  .rows .news {
+    margin: 0;
+    color: var(--ink);
+    max-width: var(--measure);
+  }
+</style>

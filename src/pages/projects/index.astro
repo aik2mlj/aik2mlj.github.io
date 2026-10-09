@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import CoverGrid from '../../components/CoverGrid.astro';
+import { getItems } from '../../lib/entries';
+
+const items = await getItems('projects');
+---
+
+<Base title="Projects" description="Computer science and engineering projects by Lejun Min: compilers, ray tracers, a RISC-V CPU and audio plugins.">
+  <header class="page-head">
+    <h1>Projects</h1>
+    <p class="lede">
+      Computer science and engineering projects, mostly from my undergraduate years: a compiler, a CPU, ray tracers
+      and an audio plugin.
+    </p>
+  </header>
+
+  <CoverGrid items={items} />
+</Base>

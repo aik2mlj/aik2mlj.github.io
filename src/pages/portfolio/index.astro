@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import CoverGrid from '../../components/CoverGrid.astro';
+import { getItems } from '../../lib/entries';
+import { LANES } from '../../lib/lanes';
+
+const items = await getItems('portfolio');
+const lanes = LANES.filter((lane) => items.some((item) => item.lane === lane));
+---
+
+<Base title="Work" description="Music, performances, installations, interactive audiovisual pieces and paintings by Lejun Min.">
+  <header class="page-head">
+    <h1>Work</h1>
+    <p class="lede">Music, performances, installations, things to play with on a screen, and a few drawings.</p>
+  </header>
+
+  <div class="filters" role="group" aria-label="Filter by kind">
+    <button class="text-button" type="button" data-filter="" aria-pressed="true">all</button>
+    {
+      lanes.map((lane) => (
+        <button class="text-button" type="button" data-filter={lane} aria-pressed="false">
+          {lane}
+        </button>
+      ))
+    }
+  </div>
+
+  <CoverGrid items={items} />
+</Base>
+
+<script>
+  const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+  const cards = [...document.querySelectorAll<HTMLElement>('.cover-card')];
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      const lane = button.dataset.filter;
+      buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+      cards.forEach((card) => (card.hidden = Boolean(lane) && card.dataset.lane !== lane));
+    });
+  }
+</script>

@@ -1,0 +1,543 @@
+/* Palette comes from the profile photo: indigo denim against an apricot wall. */
+:root {
+  --ground: #ead3b5;
+  --ground-2: #e1c7a4;
+  --ink: #1b1e32;
+  --muted: #5e534d;
+  --rule: #c2a680;
+  --seal: #a82a18;
+
+  --sans: 'Fira Sans', 'LXGW WenKai', system-ui, sans-serif;
+  --mono: 'Fira Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --kai: 'LXGW WenKai', 'Fira Sans', 'Kaiti SC', serif;
+
+  --page: 70rem;
+  --measure: 40rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ground: #1b1e32;
+    --ground-2: #24284a;
+    --ink: #f2ece2;
+    --muted: #a3a4b8;
+    --rule: #3b4066;
+    --seal: #ee6a52;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --ground: #1b1e32;
+  --ground-2: #24284a;
+  --ink: #f2ece2;
+  --muted: #a3a4b8;
+  --rule: #3b4066;
+  --seal: #ee6a52;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--page);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5.5vw, 3.5rem);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 1.45rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--seal);
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid var(--seal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Small mono text: dates, lane names, captions. */
+.meta {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.text-button {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.3em 0.9em;
+  cursor: pointer;
+}
+
+.text-button:hover,
+.text-button[aria-pressed='true'] {
+  border-color: var(--ink);
+}
+
+.text-button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--ground);
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding-block: 1.75rem;
+}
+
+.mark {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.mark-zh {
+  writing-mode: vertical-rl;
+  font-family: var(--kai);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.12em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.4rem;
+  margin-left: auto;
+}
+
+.site-nav a {
+  text-decoration: none;
+  padding-block: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a[aria-current='page'] {
+  border-bottom-color: var(--seal);
+}
+
+/* Footer */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.4rem;
+  padding-block: 2.5rem 2rem;
+  margin-top: 5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.site-footer .spacer {
+  flex: 1;
+}
+
+/* Page heads */
+.page-head {
+  padding-block: 2.5rem 2.25rem;
+  max-width: var(--measure);
+}
+
+.page-head .meta {
+  margin-bottom: 0.9rem;
+}
+
+.page-head .lede {
+  margin: 1.1rem 0 0;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.section {
+  padding-block: 2rem;
+}
+
+.section > h2 {
+  margin-bottom: 1.25rem;
+}
+
+/* Rows: date on the left, content on the right. */
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.rows > li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.25rem 1.5rem;
+  padding-block: 0.95rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.rows > li > .meta {
+  padding-top: 0.3em;
+}
+
+.rows .title {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.rows .title:hover {
+  text-decoration: underline;
+}
+
+.rows p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+
+.rows p strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.rows ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.97rem;
+}
+
+.rows ul li + li {
+  margin-top: 0.3rem;
+}
+
+.inline-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0 0.9rem;
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--seal);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.05em 0.6em;
+  margin-left: 0.4em;
+  vertical-align: 0.1em;
+  white-space: nowrap;
+}
+
+@media (max-width: 40rem) {
+  .rows > li {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cover grid */
+.cover-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 2.25rem 1.5rem;
+}
+
+.cover-card a {
+  display: block;
+  text-decoration: none;
+}
+
+.cover-card .frame {
+  aspect-ratio: 4 / 3;
+  background: var(--ground-2);
+  border-radius: 3px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.cover-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cover-card a:hover img {
+  transform: scale(1.03);
+}
+
+.cover-card .frame-text {
+  font-family: var(--kai);
+  font-size: 1.6rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.cover-card h3 {
+  margin-top: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.cover-card .meta {
+  margin-top: 0.25rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Long-form content rendered from markdown. */
+.prose {
+  max-width: var(--measure);
+}
+
+.prose > * + * {
+  margin-top: 1.1em;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-top: 2.2em;
+}
+
+.prose p {
+  margin-bottom: 0;
+}
+
+.prose img {
+  display: block;
+  border-radius: 3px;
+  margin-block: 1.5rem;
+}
+
+.prose iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 3px;
+  background: var(--ground-2);
+  margin-block: 1.5rem;
+}
+
+.prose iframe[src*='soundcloud.com'] {
+  aspect-ratio: auto;
+  height: 166px;
+}
+
+.prose audio {
+  display: block;
+  width: 100%;
+  margin-block: 1.5rem;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin-block: 2.2em;
+}
+
+.prose blockquote {
+  margin-inline: 0;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--rule);
+  color: var(--muted);
+}
+
+.prose li + li {
+  margin-top: 0.3em;
+}
+
+.prose code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+}
+
+.prose :not(pre) > code {
+  background: var(--ground-2);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+.prose pre {
+  padding: 1rem 1.1rem;
+  border-radius: 3px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-height: 28rem;
+  background: var(--ground-2) !important;
+}
+
+.prose table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.4rem 0.8rem 0.4rem 0;
+  text-align: left;
+}
+
+.prose .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  margin-block: 2rem;
+}
+
+.prose .gallery img {
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Shiki dual themes */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .astro-code,
+  :root:not([data-theme='light']) .astro-code span {
+    color: var(--shiki-dark) !important;
+  }
+}
+
+:root[data-theme='dark'] .astro-code,
+:root[data-theme='dark'] .astro-code span {
+  color: var(--shiki-dark) !important;
+}
+
+/* Chinese long-form: kai face, looser leading, shorter measure. */
+:lang(zh) {
+  font-family: var(--kai);
+}
+
+h1:lang(zh) {
+  font-weight: 400;
+}
+
+.prose:lang(zh) {
+  max-width: 34rem;
+  font-size: 1.15rem;
+  line-height: 2;
+  text-align: justify;
+}
+
+.prose:lang(zh) h2,
+.prose:lang(zh) h3 {
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.prose:lang(zh) em {
+  font-style: normal;
+  text-emphasis: dot;
+  text-emphasis-position: under;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
