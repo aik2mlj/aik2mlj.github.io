@@ -504,7 +504,9 @@ button {
 }
 
 /* Chinese: kai for names and titles, a Song face for long-form reading. */
-:lang(zh) {
+/* Match the attribute, not :lang(): :lang() also matches every descendant, which would
+   put kai on each paragraph and override the Song face set on the prose container. */
+[lang|='zh'] {
   font-family: var(--kai);
 }
 
@@ -518,11 +520,11 @@ article.zh .page-head {
   max-width: none;
 }
 
-h1:lang(zh) {
+h1[lang|='zh'] {
   font-weight: 400;
 }
 
-.prose:lang(zh) {
+.prose[lang|='zh'] {
   max-width: none;
   font-family: var(--song);
   font-size: 1.125rem;
@@ -537,22 +539,22 @@ h1:lang(zh) {
   font-kerning: normal;
 }
 
-.prose:lang(zh) > * + * {
+.prose[lang|='zh'] > * + * {
   margin-top: 1.25em;
 }
 
-.prose:lang(zh) h2,
-.prose:lang(zh) h3 {
+.prose[lang|='zh'] h2,
+.prose[lang|='zh'] h3 {
   font-family: var(--kai);
   font-weight: 700;
   letter-spacing: 0.04em;
 }
 
-.prose:lang(zh) strong {
+.prose[lang|='zh'] strong {
   font-weight: 700;
 }
 
-.prose:lang(zh) em {
+.prose[lang|='zh'] em {
   font-style: normal;
   text-emphasis: dot;
   text-emphasis-position: under;
