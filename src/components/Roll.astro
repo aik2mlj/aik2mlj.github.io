@@ -58,8 +58,9 @@ const years = Array.from({ length: new Date(end).getUTCFullYear() - first + 1 },
   <div class="bar">
     <p class="meta">{rows} strings · {first} → now</p>
     <span class="spacer"></span>
+    <span class="meta" data-roll-hint hidden>click anywhere to start sound</span>
     <button class="text-button" type="button" data-roll-play>▶ play</button>
-    <button class="text-button" type="button" data-roll-sound aria-pressed="false">sound: off</button>
+    <button class="text-button" type="button" data-roll-sound aria-pressed="true">sound: on</button>
   </div>
 
   <div class="body">
@@ -282,6 +283,7 @@ const years = Array.from({ length: new Date(end).getUTCFullYear() - first + 1 },
     const caption = root.querySelector<HTMLElement>('[data-roll-caption]')!;
     const playButton = root.querySelector<HTMLButtonElement>('[data-roll-play]')!;
     const soundButton = root.querySelector<HTMLButtonElement>('[data-roll-sound]')!;
+    const hint = root.querySelector<HTMLElement>('[data-roll-hint]')!;
     const [captionTitle, captionMeta] = [...caption.children] as HTMLElement[];
     const calm = matchMedia('(prefers-reduced-motion: reduce)');
     const guzheng = new Guzheng();
@@ -353,15 +355,42 @@ const years = Array.from({ length: new Date(end).getUTCFullYear() - first + 1 },
     });
 
     // --- Sound ------------------------------------------------------------
+    // Sound is on unless the visitor turned it off. Browsers only let audio start after
+    // a click or key press, so until then the roll is silent and a hint says why.
+    const stored = (() => {
+      try {
+        return localStorage.getItem('roll-sound');
+      } catch {
+        return null;
+      }
+    })();
+    let wanted = stored !== 'off';
+
     function showSound() {
-      soundButton.setAttribute('aria-pressed', String(guzheng.enabled));
-      soundButton.textContent = guzheng.enabled ? 'sound: on' : 'sound: off';
+      soundButton.setAttribute('aria-pressed', String(wanted));
+      soundButton.textContent = wanted ? 'sound: on' : 'sound: off';
+      hint.hidden = !wanted || guzheng.enabled;
     }
 
-    soundButton.addEventListener('click', async () => {
-      await (guzheng.enabled ? guzheng.disable() : guzheng.enable());
+    async function setSound(on: boolean) {
+      wanted = on;
+      try {
+        localStorage.setItem('roll-sound', on ? 'on' : 'off');
+      } catch {}
       showSound();
-    });
+      await (on ? guzheng.enable() : guzheng.disable());
+      showSound();
+    }
+
+    function unlock() {
+      if (wanted && !guzheng.enabled) guzheng.enable().then(showSound);
+    }
+    window.addEventListener('pointerdown', unlock);
+    window.addEventListener('keydown', unlock);
+    unlock();
+    showSound();
+
+    soundButton.addEventListener('click', () => setSound(!wanted));
 
     // --- Playback: a playhead sweeps the sheet and plucks what it crosses ----
     const SWEEP = 22_000; // ms
@@ -376,8 +405,7 @@ const years = Array.from({ length: new Date(end).getUTCFullYear() - first + 1 },
     }
 
     async function play() {
-      await guzheng.enable();
-      showSound();
+      await setSound(true);
       playButton.textContent = '■ stop';
       playhead.hidden = calm.matches;
       const began = performance.now();
