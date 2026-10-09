@@ -4,6 +4,7 @@ date: 2024-12-01
 lane: sound
 medium: Audio Drama
 summary: The protagonist suddenly no-clipped into a weird space where he witnessed (or better, heard) things beyond his comprehension.
+cover: https://i.imgur.com/KGgla23.png
 ---
 
 This is a binaural recording piece. Wear headphones/earphones for the best experience.
