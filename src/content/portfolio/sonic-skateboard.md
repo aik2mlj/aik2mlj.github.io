@@ -19,37 +19,10 @@ The main technical work focused on wiring a microcontroller and sensors capable 
 The musical component was written in [ChucK](https://chuck.stanford.edu/). I’ve long been drawn to FM synthesis for its minimalist structure and expressive richness, and I’ve always wanted to bring it into a metal-music context. I mapped the three MIDI CC signals to control the **pitch**, **loudness**, and **modulation depth** of an FM synthesizer. By riding, turning, and performing tricks on the skateboard, these parameters evolved dynamically, producing a continuously morphing lead timbre. Accompanied by a heavy metal guitar loop (also written in ChucK) and a pre-recorded drum track, I performed this *Sonic Skateboard* piece live — transforming physical motion into musical expression.
 
 <div class="gallery">
-    <a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/e6f2b62a89591ab266bbce13ac5e01a3.jpg"
-        target="_blank">
-        <img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/e6f2b62a89591ab266bbce13ac5e01a3.jpg"
-            alt="Sonic Skateboard 4">
-    </a>
-
-    <a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/ef91eae7262901aa6ad4f440405533b5.jpg"
-        target="_blank">
-        <img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/ef91eae7262901aa6ad4f440405533b5.jpg"
-            alt="Sonic Skateboard 5">
-    </a>
-
-    <a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/26e2b29208da40d1d231bfbfac2b0f21.jpg"
-        target="_blank">
-        <img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/26e2b29208da40d1d231bfbfac2b0f21.jpg"
-            alt="Sonic Skateboard 6">
-    </a>
-
-    <a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/e5e2ca403d90320a5d231b734992db83.JPG"
-        target="_blank">
-        <img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/e5e2ca403d90320a5d231b734992db83.JPG"
-            alt="Sonic Skateboard 1">
-    </a>
-    <a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/a02bf4b87d38dc38b92e3796f2fbf2af.JPG"
-        target="_blank">
-        <img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/a02bf4b87d38dc38b92e3796f2fbf2af.JPG"
-            alt="Sonic Skateboard 2">
-    </a>
-    <a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/94a129830f8afd79252f6992f8e285c9.jpg"
-        target="_blank">
-        <img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/94a129830f8afd79252f6992f8e285c9.jpg"
-            alt="Sonic Skateboard 3">
-    </a>
+<a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/e6f2b62a89591ab266bbce13ac5e01a3.jpg" target="_blank" rel="noopener"><img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/e6f2b62a89591ab266bbce13ac5e01a3.jpg" alt="Sonic Skateboard 4" loading="lazy"></a>
+<a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/ef91eae7262901aa6ad4f440405533b5.jpg" target="_blank" rel="noopener"><img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/ef91eae7262901aa6ad4f440405533b5.jpg" alt="Sonic Skateboard 5" loading="lazy"></a>
+<a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/26e2b29208da40d1d231bfbfac2b0f21.jpg" target="_blank" rel="noopener"><img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/26e2b29208da40d1d231bfbfac2b0f21.jpg" alt="Sonic Skateboard 6" loading="lazy"></a>
+<a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/e5e2ca403d90320a5d231b734992db83.JPG" target="_blank" rel="noopener"><img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/e5e2ca403d90320a5d231b734992db83.JPG" alt="Sonic Skateboard 1" loading="lazy"></a>
+<a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/a02bf4b87d38dc38b92e3796f2fbf2af.JPG" target="_blank" rel="noopener"><img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/a02bf4b87d38dc38b92e3796f2fbf2af.JPG" alt="Sonic Skateboard 2" loading="lazy"></a>
+<a href="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/94a129830f8afd79252f6992f8e285c9.jpg" target="_blank" rel="noopener"><img src="https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/11/94a129830f8afd79252f6992f8e285c9.jpg" alt="Sonic Skateboard 3" loading="lazy"></a>
 </div>
