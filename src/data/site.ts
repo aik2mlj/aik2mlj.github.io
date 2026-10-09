@@ -1,9 +1,9 @@
 export const site = {
   name: 'Lejun Min',
   nameZh: '闵乐钧',
-  tagline: 'Audio ML researcher and sound artist',
+  tagline: 'Audio ML researcher and artist',
   description:
-    'Lejun Min is an audio ML researcher and sound artist at CCRMA, Stanford, working on generative audio, music representation learning and new instruments.',
+    'Lejun Min is an audio ML researcher and artist at CCRMA, Stanford, working on generative audio, music representation learning and new instruments.',
   email: 'contact@lejun.site',
   location: 'Stanford, California',
   links: [
