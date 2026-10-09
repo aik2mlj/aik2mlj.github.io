@@ -34,14 +34,17 @@ const height = yOf(rows - 1) + PAD;
 // string fills first so that sparse lanes stay centred.
 const order = [1, 0, 2];
 const freeAt = LANES.map(() => Array<number>(STRINGS_PER_LANE).fill(-Infinity));
-const notes = items.map((item) => {
-  const lane = LANES.indexOf(item.lane);
+// A work with several lanes gets a note on each: a chord. Only its primary note is
+// exposed to keyboard and screen readers.
+const placements = items.flatMap((item) => item.lanes.map((name, i) => ({ item, name, primary: i === 0 })));
+const notes = placements.map(({ item, name, primary }) => {
+  const lane = LANES.indexOf(name);
   const time = +item.date;
   const string =
     order.find((s) => freeAt[lane][s] <= time) ?? order.reduce((a, b) => (freeAt[lane][a] <= freeAt[lane][b] ? a : b));
   freeAt[lane][string] = time + NOTE_DAYS * DAY;
   const row = rowOf(lane, string);
-  return { item, row, x: fraction(time), y: yOf(row), meta: `${item.label}, ${monthYear(item.date)}` };
+  return { item, primary, row, x: fraction(time), y: yOf(row), meta: `${item.label}, ${monthYear(item.date)}` };
 });
 
 const noteWidth = (NOTE_DAYS * DAY) / span;
@@ -77,7 +80,7 @@ const years = Array.from({ length: new Date(end).getUTCFullYear() - first + 1 },
 
         <ol>
           {
-            notes.map(({ item, row, x, y, meta }) => (
+            notes.map(({ item, primary, row, x, y, meta }) => (
               <li>
                 <a
                   class="note"
@@ -88,6 +91,8 @@ const years = Array.from({ length: new Date(end).getUTCFullYear() - first + 1 },
                   data-title={item.title}
                   data-meta={meta}
                   aria-label={`${item.title}: ${meta}`}
+                  tabindex={primary ? undefined : -1}
+                  aria-hidden={primary ? undefined : 'true'}
                 />
               </li>
             ))
@@ -319,18 +324,32 @@ const years = Array.from({ length: new Date(end).getUTCFullYear() - first + 1 },
       frame ||= requestAnimationFrame(draw);
     }
 
+    // Hovering one note of a work that spans several lanes plucks the whole chord.
+    const chord = (note: HTMLAnchorElement) => {
+      const others = notes.filter((other) => other !== note && other.href === note.href);
+      others.forEach((other) => {
+        pluck(other);
+        other.classList.add('is-on');
+      });
+      pluck(note);
+    };
+    const release = () => notes.forEach((note) => note.classList.remove('is-on'));
+
     for (const note of notes) {
-      note.addEventListener('pointerenter', () => pluck(note));
-      note.addEventListener('focus', () => pluck(note));
+      note.addEventListener('pointerenter', () => chord(note));
+      note.addEventListener('focus', () => chord(note));
+      note.addEventListener('pointerleave', release);
+      note.addEventListener('blur', release);
     }
 
     // Arrow keys step through the notes in time order.
     root.addEventListener('keydown', (event) => {
       const step = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
-      const index = notes.indexOf(document.activeElement as HTMLAnchorElement);
+      const stops = notes.filter((note) => note.tabIndex >= 0);
+      const index = stops.indexOf(document.activeElement as HTMLAnchorElement);
       if (!step || index < 0) return;
       event.preventDefault();
-      notes[index + step]?.focus();
+      stops[index + step]?.focus();
     });
 
     // --- Sound ------------------------------------------------------------

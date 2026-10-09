@@ -1,7 +1,7 @@
 ---
 title: Social Construct
 date: 2025-10-06
-lane: stage
+lane: [stage, sound]
 medium: Installation
 summary: On this staircase, scattered chairs assume postures of gathering and solitude — a quiet tableau of human presence without bodies.
 cover: https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/12/4c2012dfc1fd9770048879793eb3eab5.jpg

@@ -1,7 +1,7 @@
 ---
 title: Fireflies
 date: 2024-10-01
-lane: screen
+lane: [screen, sound]
 medium: Interactive Audiovisual Design
 summary: An interactive music therapy journey embodying a firefly. Essentially a sound peeking visualization.
 cover: https://i.imgur.com/XdjNSTB.png

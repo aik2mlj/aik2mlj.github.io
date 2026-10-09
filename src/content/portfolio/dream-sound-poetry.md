@@ -1,7 +1,7 @@
 ---
 title: Dream
 date: 2025-12-02
-lane: sound
+lane: [sound, stage]
 medium: Sound Poetry
 summary: A musique concrète sound poem about dream.
 cover: https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/12/23d6729755f76026eb276778edc752a7.png

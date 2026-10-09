@@ -8,7 +8,8 @@ export interface Item {
   entry: Entry;
   title: string;
   date: Date;
-  lane: Lane;
+  /** Primary lane first. */
+  lanes: Lane[];
   /** Short descriptor shown next to the title: medium, venue or kind of writing. */
   label: string;
   url: string;
@@ -44,7 +45,7 @@ function toItem(collection: CollectionName, entry: Entry): Item {
     entry,
     title,
     date,
-    lane,
+    lanes: lane,
     label: collection === 'publications' ? (venue ?? FALLBACK_LABEL[collection]) : (medium ?? FALLBACK_LABEL[collection]),
     url: hasPage ? `/${collection}/${entry.id}/` : (links[0]?.url ?? INDEX[collection]),
     hasPage,

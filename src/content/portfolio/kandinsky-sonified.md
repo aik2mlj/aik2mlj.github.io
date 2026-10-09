@@ -1,7 +1,7 @@
 ---
 title: Kandinsky Sonified
 date: 2024-11-01
-lane: screen
+lane: [screen, sound]
 medium: Interactive Audiovisual Design
 summary: An interactive audiovisual music sequencer that creates and sonifies Kandinsky-like abstract paintings.
 cover: https://i.imgur.com/TcgzOKZ.png

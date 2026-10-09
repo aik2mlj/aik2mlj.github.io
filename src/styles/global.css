@@ -10,6 +10,7 @@
   --sans: 'Fira Sans', 'LXGW WenKai', system-ui, sans-serif;
   --mono: 'Fira Mono', ui-monospace, 'SFMono-Regular', monospace;
   --kai: 'LXGW WenKai', 'Fira Sans', 'Kaiti SC', serif;
+  --song: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
 
   --page: 70rem;
   --measure: 40rem;
@@ -502,9 +503,19 @@ button {
   color: var(--shiki-dark) !important;
 }
 
-/* Chinese long-form: kai face, looser leading, shorter measure. */
+/* Chinese: kai for names and titles, a Song face for long-form reading. */
 :lang(zh) {
   font-family: var(--kai);
+}
+
+/* Literature pages sit in a centred column of about 38 characters a line. */
+article.zh {
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+article.zh .page-head {
+  max-width: none;
 }
 
 h1:lang(zh) {
@@ -512,16 +523,33 @@ h1:lang(zh) {
 }
 
 .prose:lang(zh) {
-  max-width: 34rem;
-  font-size: 1.15rem;
-  line-height: 2;
+  max-width: none;
+  font-family: var(--song);
+  font-size: 1.125rem;
+  line-height: 1.95;
   text-align: justify;
+  text-justify: inter-character;
+  line-break: strict;
+  /* Close up the gaps around full-width punctuation and space out Latin from Han. */
+  text-spacing-trim: trim-start;
+  text-autospace: normal;
+  hanging-punctuation: allow-end;
+  font-kerning: normal;
+}
+
+.prose:lang(zh) > * + * {
+  margin-top: 1.25em;
 }
 
 .prose:lang(zh) h2,
 .prose:lang(zh) h3 {
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-family: var(--kai);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.prose:lang(zh) strong {
+  font-weight: 700;
 }
 
 .prose:lang(zh) em {

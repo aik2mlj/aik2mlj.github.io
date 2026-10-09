@@ -1,7 +1,7 @@
 ---
 title: Dorm Band
 date: 2022-04-07
-lane: sound
+lane: [sound, stage]
 medium: Music
 summary: A patchwork band sings.
 cover: https://i.imgur.com/wRU6xr8.png

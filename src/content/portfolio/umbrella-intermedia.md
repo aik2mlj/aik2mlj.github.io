@@ -1,7 +1,7 @@
 ---
 title: Umbrella
 date: 2025-12-01
-lane: stage
+lane: [screen, sound]
 medium: Intermedia
 summary: '"I need an umbrella to survive this rainy day." "An umbrella? What color?"'
 cover: https://pub-29c70120d3f24ac491b747be7b6a79e6.r2.dev/2025/12/333be5fce04804aed7c6467d7e967419.png

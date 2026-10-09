@@ -10,4 +10,5 @@ bun run build    # static site in dist/
 
 Content lives in `src/content/<collection>/*.md`. Each entry needs `title`, `date` and a `lane`
 (research, sound, stage, screen, image, code or words), which places it on the home page roll.
+A work can sit on several lanes: `lane: [sound, stage]`.
 CV and news data are in `src/data/`. Pushing to `master` deploys through GitHub Actions.

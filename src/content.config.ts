@@ -7,7 +7,9 @@ const schema = ({ image }: SchemaContext) =>
   z.object({
     title: z.string(),
     date: z.coerce.date(),
-    lane: z.enum(LANES),
+    // One lane or several: a work can sit on more than one, e.g. `lane: [sound, stage]`.
+    // The first is its primary lane.
+    lane: z.union([z.enum(LANES), z.array(z.enum(LANES)).min(1)]).transform((lane) => [lane].flat()),
     medium: z.string().optional(),
     summary: z.string().optional(),
     cover: z.union([z.url(), image()]).optional(),

@@ -5,7 +5,7 @@ import { getItems } from '../../lib/entries';
 import { LANES } from '../../lib/lanes';
 
 const items = await getItems('portfolio');
-const lanes = LANES.filter((lane) => items.some((item) => item.lane === lane));
+const lanes = LANES.filter((lane) => items.some((item) => item.lanes.includes(lane)));
 ---
 
 <Base title="Work" description="Music, performances, installations, interactive audiovisual pieces and paintings by Lejun Min.">
@@ -36,7 +36,7 @@ const lanes = LANES.filter((lane) => items.some((item) => item.lane === lane));
     button.addEventListener('click', () => {
       const lane = button.dataset.filter;
       buttons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
-      cards.forEach((card) => (card.hidden = Boolean(lane) && card.dataset.lane !== lane));
+      cards.forEach((card) => (card.hidden = Boolean(lane) && !card.dataset.lanes!.split(' ').includes(lane!)));
     });
   }
 </script>

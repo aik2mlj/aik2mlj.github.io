@@ -1,7 +1,7 @@
 ---
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import { authorsHtml, getAllItems, indexUrl, monthYear, isoDate, type Item } from '../../lib/entries';
+import { getAllItems, indexUrl, monthYear, isoDate, type Item } from '../../lib/entries';
 
 export async function getStaticPaths() {
   const items = await getAllItems();
@@ -30,13 +30,12 @@ const where = [data.venue, data.location].filter(Boolean).join(', ');
 ---
 
 <Base title={item.title} description={data.summary}>
-  <article>
+  <article class={zh ? 'zh' : undefined}>
     <header class="page-head">
       <p class="meta">
-        {item.lane} · {!zh && `${item.label} · `}<time datetime={isoDate(item.date)}>{monthYear(item.date)}</time>
+        {item.lanes.join(' + ')} · {!zh && `${item.label} · `}<time datetime={isoDate(item.date)}>{monthYear(item.date)}</time>
       </p>
       <h1 lang={zh ? 'zh-Hans' : undefined}>{item.title}</h1>
-      {data.authors && <p class="lede" set:html={authorsHtml(data.authors)} />}
       {item.collection !== 'publications' && where && <p class="lede">{where}</p>}
       {
         (data.note || data.links.length > 0) && (

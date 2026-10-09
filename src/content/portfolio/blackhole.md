@@ -1,7 +1,7 @@
 ---
 title: Talking to a Black Hole
 date: 2024-12-01
-lane: screen
+lane: [screen, sound]
 medium: Interactive Audiovisual Design
 summary: A lonely black hole flows at a corner of the universe. No creatures dare to come near as it alters the spacetime nearby. You are probably the first one.
 cover: https://i.imgur.com/RCUgIKp.jpeg

@@ -12,7 +12,7 @@ const { items } = Astro.props;
 <ul class="cover-grid">
   {
     items.map((item) => (
-      <li class="cover-card" data-lane={item.lane}>
+      <li class="cover-card" data-lanes={item.lanes.join(' ')}>
         <a href={item.url}>
           <Cover cover={item.entry.data.cover} fallback={item.title} />
           <h3>{item.title}</h3>

@@ -1,7 +1,7 @@
 ---
 title: A Chan Conversation
 date: 2025-05-15
-lane: stage
+lane: [stage, sound]
 medium: Live Performance
 summary: A sonic conversation with an ancient Chan Buddhist monk.
 cover: https://i.imgur.com/I0BN3Om.png
