@@ -7,7 +7,7 @@ export const education = [
     dates: '2024 – expected Jan. 2027',
     points: [
       'Advisors: Prof. Marina Bosi, Prof. Takako Fujioka',
-      'Teaching assistant for Perceptual Audio Coding (Winter 2026)',
+      'Teaching assistant for Perceptual Audio Coding, Music 422 (Winter 2026)',
     ],
   },
   {
