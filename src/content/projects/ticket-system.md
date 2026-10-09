@@ -4,6 +4,7 @@ date: 2020-06-01
 lane: code
 medium: Programming Project
 summary: A cooperated project including backend C++ coding, B+ Tree data structure implementation and frontend website design.
+tile: bptree
 ---
 
 This is a cooperated project including backend C++ coding, B+ Tree data structure implementation and frontend website design. It served as the course project for Data Structure course CS147.

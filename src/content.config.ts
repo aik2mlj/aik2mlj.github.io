@@ -1,7 +1,7 @@
 import { defineCollection, type SchemaContext } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { COLLECTIONS, LANES } from './lib/lanes';
+import { COLLECTIONS, LANES, TILES } from './lib/lanes';
 
 const schema = ({ image }: SchemaContext) =>
   z.object({
@@ -13,6 +13,7 @@ const schema = ({ image }: SchemaContext) =>
     medium: z.string().optional(),
     summary: z.string().optional(),
     cover: z.union([z.url(), image()]).optional(),
+    tile: z.enum(TILES).optional(),
     venue: z.string().optional(),
     location: z.string().optional(),
     authors: z.string().optional(),

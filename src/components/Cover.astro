@@ -1,19 +1,25 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import Tile from './Tile.astro';
+import type { TileKind } from '../lib/lanes';
 
 interface Props {
   cover: string | ImageMetadata | undefined;
+  /** A drawn cover, used when there is no image. */
+  tile?: TileKind;
   /** Shown in place of the image when an entry has no cover. */
   fallback: string;
 }
 
-const { cover, fallback } = Astro.props;
+const { cover, tile, fallback } = Astro.props;
 ---
 
 <div class="frame">
   {
-    !cover ? (
+    !cover && tile ? (
+      <Tile kind={tile} />
+    ) : !cover ? (
       <span class="frame-text">{fallback}</span>
     ) : typeof cover === 'string' ? (
       <img src={cover} alt="" loading="lazy" decoding="async" />

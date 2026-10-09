@@ -4,6 +4,7 @@ date: 2020-02-01
 lane: code
 medium: Programming Project
 summary: A python language interpreter written in C++.
+tile: interpreter
 ---
 
 As a course project for CS152, we designed an interpreter for a subset of the python language. `Antlr4` was used for syntax parsing. Apart from that, everything was handmade.

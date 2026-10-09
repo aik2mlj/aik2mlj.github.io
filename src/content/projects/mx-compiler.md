@@ -4,6 +4,7 @@ date: 2021-05-02
 lane: code
 medium: Programming Project
 summary: A completely hand-made compiler for a toy language with multiple optimizations.
+tile: compiler
 ---
 
 This huge project is assigned in MS208 course. We built a compiler from scratch, from the backend to the frontend (antlr4 used for parsing) and added 

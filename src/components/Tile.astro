@@ -1,0 +1,142 @@
+---
+// Drawn covers for projects that have nothing to photograph: each shows what the
+// project does. The code is illustrative, not quoted from the repositories.
+import type { TileKind } from '../lib/lanes';
+
+interface Props {
+  kind: TileKind;
+}
+
+const { kind } = Astro.props;
+
+const prompt = (text: string) => `<span class="dim">${text}</span>`;
+const repl = [
+  `${prompt('&gt;&gt;&gt;')} def fib(n):`,
+  `${prompt('...')}     if n &lt; 2: return n`,
+  `${prompt('...')}     return fib(n-1) + fib(n-2)`,
+  prompt('...'),
+  `${prompt('&gt;&gt;&gt;')} print(fib(10))`,
+  `<span class="out">55</span>`,
+].join('\n');
+---
+
+<div class="tile" aria-hidden="true">
+  {
+    kind === 'compiler' && (
+      <div class="compile">
+        <pre>{`int sq(int n) {\n  return n * n;\n}`}</pre>
+        <span class="arrow">→</span>
+        <pre>{`sq:\n  mul a0, a0, a0\n  ret`}</pre>
+      </div>
+    )
+  }
+  {
+    kind === 'interpreter' && <pre class="repl" set:html={repl} />
+  }
+  {
+    kind === 'bptree' && (
+      <svg viewBox="0 0 240 150" role="presentation">
+        <g class="edges">
+          <path d="M100 43 L48 92 M120 43 L120 92 M140 43 L192 92" />
+        </g>
+        <g class="links">
+          <path d="M76 104 H92 M148 104 H164" />
+        </g>
+        <g class="nodes">
+          <rect x="92" y="20" width="56" height="23" rx="2" />
+          <path d="M120 20 V43" />
+          <rect x="20" y="92" width="56" height="23" rx="2" />
+          <path d="M48 92 V115" />
+          <rect x="92" y="92" width="56" height="23" rx="2" />
+          <path d="M120 92 V115" />
+          <rect x="164" y="92" width="56" height="23" rx="2" />
+          <path d="M192 92 V115" />
+        </g>
+        <g class="keys">
+          <text x="106" y="36">20</text>
+          <text x="134" y="36">40</text>
+          <text x="34" y="108">5</text>
+          <text x="62" y="108">12</text>
+          <text x="106" y="108">20</text>
+          <text x="134" y="108">31</text>
+          <text x="178" y="108">40</text>
+          <text x="206" y="108">57</text>
+        </g>
+      </svg>
+    )
+  }
+</div>
+
+<style>
+  .tile {
+    container-type: inline-size;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 6%;
+    color: var(--ink);
+  }
+
+  pre {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: clamp(0.55rem, 4.3cqi, 0.85rem);
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .compile {
+    display: flex;
+    align-items: center;
+    gap: 5cqi;
+  }
+
+  .arrow,
+  .out {
+    color: var(--seal);
+  }
+
+  .arrow {
+    font-family: var(--mono);
+    font-size: clamp(0.9rem, 7cqi, 1.4rem);
+  }
+
+  /* The session is injected as HTML, so its spans carry no scope attribute. */
+  .repl :global(.dim) {
+    color: var(--muted);
+  }
+
+  .repl :global(.out) {
+    color: var(--seal);
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .nodes,
+  .edges,
+  .links {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1;
+  }
+
+  .edges {
+    stroke: var(--muted);
+  }
+
+  .links {
+    stroke: var(--seal);
+    stroke-dasharray: 2 2;
+  }
+
+  .keys {
+    font-family: var(--mono);
+    font-size: 9px;
+    fill: var(--ink);
+    text-anchor: middle;
+  }
+</style>

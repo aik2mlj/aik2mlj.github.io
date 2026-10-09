@@ -14,7 +14,7 @@ const { items } = Astro.props;
     items.map((item) => (
       <li class="cover-card" data-lanes={item.lanes.join(' ')}>
         <a href={item.url}>
-          <Cover cover={item.entry.data.cover} fallback={item.title} />
+          <Cover cover={item.entry.data.cover} tile={item.entry.data.tile} fallback={item.title} />
           <h3>{item.title}</h3>
           <p class="meta">
             {item.label} · {monthYear(item.date)}
